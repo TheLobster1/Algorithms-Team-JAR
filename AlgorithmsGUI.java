@@ -1,11 +1,11 @@
 import javax.swing.*;
 
 public class AlgorithmsGUI {
-    private final JPanel panel;
+    private final GUIPanel panel;
 
     public AlgorithmsGUI() {
         JFrame frame = new JFrame("JARJAR Algorithms");
-        this.panel = new JPanel();
+        this.panel = new GUIPanel();
         frame.setDefaultCloseOperation(3);
         frame.getContentPane().add(this.panel);
         frame.pack();
