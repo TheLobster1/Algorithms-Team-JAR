@@ -1,4 +1,4 @@
-public class Squirrel {
+public class Squirrel implements Comparable<Squirrel> {
     private int age;
     private String primary_fur_color;
     private String location;
@@ -31,5 +31,10 @@ public class Squirrel {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    @Override
+    public int compareTo(Squirrel o) {
+        return 0;
     }
 }
