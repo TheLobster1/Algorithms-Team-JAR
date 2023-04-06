@@ -5,32 +5,33 @@ public class GenBubbleSort<T extends Comparable<? super T>> {
     private boolean swapped;
 
     public GenBubbleSort() {
-        n = 0;
-        i = 0;
-        j = 0;
-        swapped = false;
+        this.n = 0;
+        this.i = 0;
+        this.j = 0;
+        this.swapped = false;
     }
 
-    public void bubbleSort(T[] array) {
-        n = array.length;
+    //Given a collection it returns said collection sorted
+    public <T extends iPoliceCollection> T bubbleSort(T collection) {
+        int size = collection.size();
 
         //Runs till the 2nd last element because the last element should be sorted
         for (i = 0; i < n - 1; i++) {
             //Goes from the first element to the last unsorted
             for (j = 0; j < n - i - 1; j++) {
-                if (array[j].compareTo(array[j + 1]) > 0) {
+                if (collection.findIndex(j).compareTo(collection.findIndex(j + 1)) > 0) {
                     //Swaps the values
-                    T temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                    swapped = true;
+                    collection.swapEl(j, j + 1);
+                    this.swapped = true;
                 }
 
             }
-            if (swapped == false) {
-                //Assumes all elements are in order
+            if (this.swapped == false) {
+                //Assumes all elements are in order, prevents wasted Process time
                 break;
             }
         }
+        //returns the sorted collection in theory
+        return collection;
     }
 }
