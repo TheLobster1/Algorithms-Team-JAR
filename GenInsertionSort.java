@@ -13,10 +13,10 @@ public class GenInsertionSort<T extends Comparable<? super T>> {
         }
         genInsertionSort(collection, size - 1);
 
-        int last = (int) collection.findIndex(size - 1);
+        int last = (int) collection.fetchAtIndex(size - 1);
         j = size - 2;
 
-        while (j >= 0 && (int) collection.findIndex(j) > last) {
+        while (j >= 0 && (int) collection.fetchAtIndex(j) > last) {
             collection.swapEl(j + 1, j);
             j--;
         }

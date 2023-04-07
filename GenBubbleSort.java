@@ -19,7 +19,7 @@ public class GenBubbleSort<T extends Comparable<? super T>> {
         for (i = 0; i < n - 1; i++) {
             //Goes from the first element to the last unsorted
             for (j = 0; j < n - i - 1; j++) {
-                if (collection.findIndex(j).compareTo(collection.findIndex(j + 1)) > 0) {
+                if (collection.fetchAtIndex(j).compareTo(collection.fetchAtIndex(j + 1)) > 0) {
                     //Swaps the values
                     collection.swapEl(j, j + 1);
                     this.swapped = true;

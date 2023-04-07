@@ -16,9 +16,8 @@ public class DoublyLinkedList implements iPoliceCollection {
             tail = node;
             head.setPrev(null);
             tail.setNext(null);
-
         } else {
-            
+            //Attaches a tail
             tail.setNext(node);
             node.setPrev(tail);
             tail = node;
@@ -34,8 +33,8 @@ public class DoublyLinkedList implements iPoliceCollection {
     }
 
     @Override
-    public Comparable findIndex(int index) {
-        //TODO
+    public Comparable fetchAtIndex(int index) {
+
         return null;
     }
 
