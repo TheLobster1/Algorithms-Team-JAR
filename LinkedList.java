@@ -50,6 +50,7 @@ public class LinkedList implements iPoliceCollection {
 
     @Override
     public Comparable findIndex(int index) {
+        //TODO
         return null;
     }
 

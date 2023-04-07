@@ -10,7 +10,7 @@ public class GUIPanel extends JPanel {
     private JToggleButton anotherListToggle;
     private JToggleButton bubbleSortToggle;
     private JToggleButton anotherSortToggle;
-    private JToggleButton searchToggle;
+    private JToggleButton binarySearchToggle;
     private JToggleButton anotherSearchToggle;
     private JTextArea resultsBox;
     private JTextArea resultTimeBox;
@@ -103,15 +103,15 @@ public class GUIPanel extends JPanel {
         });
         algoSelector.add(anotherSortToggle);
 
-        searchToggle = new JToggleButton();
-        searchToggle.setText("SEARCH GO BRRRR");
-        searchToggle.addActionListener(e -> {
-            if(searchToggle.isSelected()) {
+        binarySearchToggle = new JToggleButton();
+        binarySearchToggle.setText("Binary Search");
+        binarySearchToggle.addActionListener(e -> {
+            if(binarySearchToggle.isSelected()) {
                 resetAlgorithms();
-                searchToggle.setSelected(true);
+                binarySearchToggle.setSelected(true);
             }
         });
-        algoSelector.add(searchToggle);
+        algoSelector.add(binarySearchToggle);
 
         anotherSearchToggle = new JToggleButton();
         anotherSearchToggle.setText("More searching...");
@@ -126,7 +126,7 @@ public class GUIPanel extends JPanel {
         runButton = new JButton("Run");
         runButton.addActionListener((e -> {
             if(linkedListToggle.isSelected() || arrayListToggle.isSelected() || anotherListToggle.isSelected()) {
-                if(bubbleSortToggle.isSelected() || anotherSortToggle.isSelected() || searchToggle.isSelected() || anotherSearchToggle.isSelected()) {
+                if(bubbleSortToggle.isSelected() || anotherSortToggle.isSelected() || binarySearchToggle.isSelected() || anotherSearchToggle.isSelected()) {
                     if(linkedListToggle.isSelected()) {
                         //TODO
                     }
@@ -142,7 +142,7 @@ public class GUIPanel extends JPanel {
                     if(anotherSortToggle.isSelected()) {
                         //TODO
                     }
-                    if(searchToggle.isSelected()) {
+                    if(binarySearchToggle.isSelected()) {
                         //TODO
                     }
                     if(anotherSearchToggle.isSelected()) {
@@ -166,7 +166,7 @@ public class GUIPanel extends JPanel {
     private void resetAlgorithms() {
         bubbleSortToggle.setSelected(false);
         anotherSortToggle.setSelected(false);
-        searchToggle.setSelected(false);
+        binarySearchToggle.setSelected(false);
         anotherSearchToggle.setSelected(false);
     }
 

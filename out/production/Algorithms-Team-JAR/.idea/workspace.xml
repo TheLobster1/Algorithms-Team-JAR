@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60242326-2a0c-439b-b474-3492167db2de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AlgorithmsGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/AlgorithmsGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUIPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUIPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/AlgorithmsGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/AlgorithmsGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/GUIPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/GUIPanel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Squirrel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
