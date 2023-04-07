@@ -23,17 +23,17 @@ public class GenBinarySearch<T extends Comparable<T>> {
         }
     }
 
-    public static void main(String[] args) {
-        ArrayList<Squirrel> squirrelData = new ArrayList<>();
-        for(Squirrel squirrel: squirrelData) {
-            Squirrel squirrels = squirrel;
-            GenBinarySearch<Squirrel> search = new GenBinarySearch<>();
-            int index = search.binarySearch(squirrels,squirrelData[1]);
-            if (index != -1) {
-                System.out.println("Found at index " + index);
-            } else {
-                System.out.println("Not found");
-            }
-        }
-    }
+//    public static void main(String[] args) {
+//        ArrayList<Squirrel> squirrelData = new ArrayList<>();
+//        for(Squirrel squirrel: squirrelData) {
+//            Squirrel squirrels = squirrel;
+//            GenBinarySearch<Squirrel> search = new GenBinarySearch<>();
+//            int index = search.binarySearch(squirrels,squirrelData[1]);
+//            if (index != -1) {
+//                System.out.println("Found at index " + index);
+//            } else {
+//                System.out.println("Not found");
+//            }
+//        }
+//    }
 }
