@@ -34,7 +34,7 @@ public class DoublyLinkedList implements iPoliceCollection {
 
     @Override
     public Comparable fetchAtIndex(int index) {
-
+        //TODO make search to find node at index position in list
         return null;
     }
 

@@ -49,7 +49,8 @@ public class LinkedList implements iPoliceCollection {
 
     @Override
     public Comparable fetchAtIndex(int index) {
-        //TODO
+        //TODO make search to find node at index position in list
+
         return null;
     }
 
