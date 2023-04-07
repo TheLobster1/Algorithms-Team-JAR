@@ -1,36 +1,36 @@
 public class Squirrel implements Comparable<Squirrel> {
-    private int age;
-    private String primary_fur_color;
-    private String location;
+    private String squirrelID;
+    private String dateFound;
+    private String color;
 
-    public Squirrel(int age, String primary_fur_color, String location) {
-        this.age = age;
-        this.primary_fur_color = primary_fur_color;
-        this.location = location;
+    public Squirrel(String squirrelID, String dateFound, String color) {
+        this.squirrelID = squirrelID;
+        this.dateFound = dateFound;
+        this.color = color;
     }
 
-    public int getAge() {
-        return age;
+    public String getSquirrelID() {
+        return squirrelID;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setSquirrelID(String squirrelID) {
+        this.squirrelID = squirrelID;
     }
 
-    public String getPrimary_fur_color() {
-        return primary_fur_color;
+    public String getDateFound() {
+        return dateFound;
     }
 
-    public void setPrimary_fur_color(String primary_fur_color) {
-        this.primary_fur_color = primary_fur_color;
+    public void setDateFound(String  dateFound) {
+        this.dateFound = dateFound;
     }
 
-    public String getLocation() {
-        return location;
+    public String getColor() {
+        return color;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     @Override

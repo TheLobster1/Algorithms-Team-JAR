@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class GenBinarySearch<T extends Comparable<T>> {
 
     public int binarySearch(T[] arr, T target) {
@@ -22,16 +24,16 @@ public class GenBinarySearch<T extends Comparable<T>> {
     }
 
     public static void main(String[] args) {
-        Squirrel squirrel1 = new Squirrel(2,"Black","Compton");
-        Squirrel squirrel2 = new Squirrel(5,"Brown","Bronx");
-        Squirrel squirrel3 = new Squirrel(8,"White","O-Block");
-        Squirrel[] squirrels = {squirrel1, squirrel2, squirrel3};
-        GenBinarySearch<Squirrel> search = new GenBinarySearch<>();
-        int index = search.binarySearch(squirrels, squirrel2);
-        if (index != -1) {
-            System.out.println("Found at index " + index);
-        } else {
-            System.out.println("Not found");
+        ArrayList<Squirrel> squirrelData = new ArrayList<>();
+        for(Squirrel squirrel: squirrelData) {
+            Squirrel squirrels = squirrel;
+            GenBinarySearch<Squirrel> search = new GenBinarySearch<>();
+            int index = search.binarySearch(squirrels,squirrelData[1]);
+            if (index != -1) {
+                System.out.println("Found at index " + index);
+            } else {
+                System.out.println("Not found");
+            }
         }
     }
 }
