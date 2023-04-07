@@ -16,7 +16,9 @@ public class DoublyLinkedList implements iPoliceCollection {
             tail = node;
             head.setPrev(null);
             tail.setNext(null);
+
         } else {
+            
             tail.setNext(node);
             node.setPrev(tail);
             tail = node;
