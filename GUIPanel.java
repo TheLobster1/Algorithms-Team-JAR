@@ -5,13 +5,13 @@ import java.awt.*;
 
 public class GUIPanel extends JPanel {
     private JButton runButton;
-    private JToggleButton linkedListToggle;
+    private JToggleButton singlyLinkedListToggle;
     private JToggleButton arrayListToggle;
-    private JToggleButton anotherListToggle;
+    private JToggleButton doublyLinkedListToggle;
     private JToggleButton bubbleSortToggle;
-    private JToggleButton anotherSortToggle;
+    private JToggleButton insertionSortToggle;
     private JToggleButton binarySearchToggle;
-    private JToggleButton anotherSearchToggle;
+    private JToggleButton linearSearchToggle;
     private JTextArea resultsBox;
     private JTextArea resultTimeBox;
     public GUIPanel() {
@@ -53,15 +53,15 @@ public class GUIPanel extends JPanel {
         selectionPanel.add(resultsBox);
 
         //create buttons and add listeners
-        linkedListToggle = new JToggleButton();
-        linkedListToggle.setText("Linked List");
-        linkedListToggle.addActionListener(e -> {
-            if(linkedListToggle.isSelected()) {
+        singlyLinkedListToggle = new JToggleButton();
+        singlyLinkedListToggle.setText("Singly Linked List");
+        singlyLinkedListToggle.addActionListener(e -> {
+            if(singlyLinkedListToggle.isSelected()) {
                 resetLists();
-                linkedListToggle.setSelected(true);
+                singlyLinkedListToggle.setSelected(true);
             }
         });
-        listTypeSelector.add(linkedListToggle);
+        listTypeSelector.add(singlyLinkedListToggle);
 
         arrayListToggle = new JToggleButton();
         arrayListToggle.setText("ArrayList");
@@ -73,15 +73,15 @@ public class GUIPanel extends JPanel {
         });
         listTypeSelector.add(arrayListToggle);
 
-        anotherListToggle = new JToggleButton();
-        anotherListToggle.setText("IDK");
-        anotherListToggle.addActionListener(e -> {
-            if(anotherListToggle.isSelected()) {
+        doublyLinkedListToggle = new JToggleButton();
+        doublyLinkedListToggle.setText("Doubly Linked List");
+        doublyLinkedListToggle.addActionListener(e -> {
+            if(doublyLinkedListToggle.isSelected()) {
                 resetLists();
-                anotherListToggle.setSelected(true);
+                doublyLinkedListToggle.setSelected(true);
             }
         });
-        listTypeSelector.add(anotherListToggle);
+        listTypeSelector.add(doublyLinkedListToggle);
 
         bubbleSortToggle = new JToggleButton();
         bubbleSortToggle.setText("Bubble Sort");
@@ -93,15 +93,15 @@ public class GUIPanel extends JPanel {
         });
         algoSelector.add(bubbleSortToggle);
 
-        anotherSortToggle = new JToggleButton();
-        anotherSortToggle.setText("SORTING YAY");
-        anotherSortToggle.addActionListener(e -> {
-            if(anotherSortToggle.isSelected()) {
+        insertionSortToggle = new JToggleButton();
+        insertionSortToggle.setText("Insertion Sort");
+        insertionSortToggle.addActionListener(e -> {
+            if(insertionSortToggle.isSelected()) {
                 resetAlgorithms();
-                anotherSortToggle.setSelected(true);
+                insertionSortToggle.setSelected(true);
             }
         });
-        algoSelector.add(anotherSortToggle);
+        algoSelector.add(insertionSortToggle);
 
         binarySearchToggle = new JToggleButton();
         binarySearchToggle.setText("Binary Search");
@@ -113,39 +113,39 @@ public class GUIPanel extends JPanel {
         });
         algoSelector.add(binarySearchToggle);
 
-        anotherSearchToggle = new JToggleButton();
-        anotherSearchToggle.setText("More searching...");
-        anotherSearchToggle.addActionListener(e -> {
-            if(anotherSearchToggle.isSelected()) {
+        linearSearchToggle = new JToggleButton();
+        linearSearchToggle.setText("Linear Search");
+        linearSearchToggle.addActionListener(e -> {
+            if(linearSearchToggle.isSelected()) {
                 resetAlgorithms();
-                anotherSearchToggle.setSelected(true);
+                linearSearchToggle.setSelected(true);
             }
         });
-        algoSelector.add(anotherSearchToggle);
+        algoSelector.add(linearSearchToggle);
 
         runButton = new JButton("Run");
         runButton.addActionListener((e -> {
-            if(linkedListToggle.isSelected() || arrayListToggle.isSelected() || anotherListToggle.isSelected()) {
-                if(bubbleSortToggle.isSelected() || anotherSortToggle.isSelected() || binarySearchToggle.isSelected() || anotherSearchToggle.isSelected()) {
-                    if(linkedListToggle.isSelected()) {
+            if(singlyLinkedListToggle.isSelected() || arrayListToggle.isSelected() || doublyLinkedListToggle.isSelected()) {
+                if(bubbleSortToggle.isSelected() || insertionSortToggle.isSelected() || binarySearchToggle.isSelected() || linearSearchToggle.isSelected()) {
+                    if(singlyLinkedListToggle.isSelected()) {
                         //TODO
                     }
                     if(arrayListToggle.isSelected()) {
                         //TODO
                     }
-                    if(anotherListToggle.isSelected()) {
+                    if(doublyLinkedListToggle.isSelected()) {
                         //TODO
                     }
                     if(bubbleSortToggle.isSelected()) {
                         //TODO
                     }
-                    if(anotherSortToggle.isSelected()) {
+                    if(insertionSortToggle.isSelected()) {
                         //TODO
                     }
                     if(binarySearchToggle.isSelected()) {
                         //TODO
                     }
-                    if(anotherSearchToggle.isSelected()) {
+                    if(linearSearchToggle.isSelected()) {
                         //TODO
                     }
                     return;
@@ -159,15 +159,15 @@ public class GUIPanel extends JPanel {
     public Font getFont() { return new Font("Arial", 1, 24);}
     public Dimension getPreferredSize() { return new Dimension(800, 600); }
     private void resetLists() {
-        linkedListToggle.setSelected(false);
+        singlyLinkedListToggle.setSelected(false);
         arrayListToggle.setSelected(false);
-        anotherListToggle.setSelected(false);
+        doublyLinkedListToggle.setSelected(false);
     }
     private void resetAlgorithms() {
         bubbleSortToggle.setSelected(false);
-        anotherSortToggle.setSelected(false);
+        insertionSortToggle.setSelected(false);
         binarySearchToggle.setSelected(false);
-        anotherSearchToggle.setSelected(false);
+        linearSearchToggle.setSelected(false);
     }
 
     public void setText(String results) {
