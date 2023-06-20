@@ -37,4 +37,9 @@ public class VgSales implements Comparable<VgSales>{
     public int compareTo(VgSales o) {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return "Rank: " + rank + ", Name: " + name + ", Year: " + year;
+    }
 }
