@@ -136,4 +136,21 @@ class VgSalesLinkedList {
         printList(head.next);
         System.out.println(head.data);
     }
+
+
+    public static <T> String RLinearSearch(Node<T> start, T target) {
+        try {
+            if (start == null) {
+                throw new NullPointerException();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if (target == start.data)
+            return start.toString();
+        return RLinearSearch(start.next, target);
+    }
+
 }
