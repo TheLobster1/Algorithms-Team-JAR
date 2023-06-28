@@ -138,19 +138,45 @@ class VgSalesLinkedList {
     }
 
 
-    public static <T> String RLinearSearch(Node<T> start, T target) {
-        try {
-            if (start == null) {
-                throw new NullPointerException();
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
+    public static <T> String rLinearSearch(Node<T> start, T target) {   //Recursive linear search
+        if (start == null) {
+            return null;
         }
-
         if (target == start.data)
             return start.toString();
-        return RLinearSearch(start.next, target);
+        return rLinearSearch(start.next, target);
     }
 
+    public static <T> Node findMiddleNodeBinary(Node<T> start, Node<T> last) {
+        if (start.data == null)
+            return null;
+        Node<T> slowSearch = start;         //Searches 1 node ahead
+        Node<T> fastSearch = start.next;    //Searches 2 nodes ahead
+
+        while (fastSearch != last) {
+            fastSearch = fastSearch.next;
+            if (fastSearch != last) {
+                slowSearch = slowSearch.next;
+                fastSearch = fastSearch.next;
+            }
+        }
+        return slowSearch;
+    }
+
+    //TODO: Logic to figure out which method to use the int one or string
+    public static <T extends Integer> Integer rBinarySearch(Node<T> start, T target) {
+        Node<T> last = null;
+        do {
+            Node<T> middle = findMiddleNodeBinary(start, last);
+
+            if (start.data == target) {
+                return start.data;
+            } else if (target.toString() < start.data.toString()) {
+
+            }
+        } while () {
+
+        }
+        return cock;
+    }
 }
