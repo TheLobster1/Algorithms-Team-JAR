@@ -177,4 +177,32 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
             }
         }
     }
+
+    public Node<T> linearSearch(T data) {
+        if(head == null ) {
+            return null;
+        }
+        if(data == null) {
+            return null;
+        }
+        Node<T> current = head;
+        while(current != null) {
+            if(current.getData().equals(data)) {
+                return current;
+            }
+            else{
+                current = current.getNext();
+            }
+        }
+        return null;
+    }
+
+    public static <T> String rLinearSearch(Node<T> start, T target) {   //Recursive linear search
+        if (start == null) {
+            return null;
+        }
+        if (target == start.data)
+            return start.toString();
+        return rLinearSearch(start.next, target);
+    }
 }

@@ -159,6 +159,7 @@ public class GUIPanel extends JPanel {
                     }
                     if(doublyLinkedListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
+
                             doubly.bubbleSort();
                         }
                         if (insertionSortToggle.isSelected()) {
