@@ -1,6 +1,7 @@
 public class DoublyLinkedListVgSales<T extends Comparable<T>> {
     private Node<T> head;
     private Node<T> tail;
+
     static class Node<T> {
         public T data;
         private Node<T> prev;
@@ -36,17 +37,18 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
             this.next = next;
         }
     }
+
     public DoublyLinkedListVgSales() {
         this.head = null;
         this.tail = null;
     }
+
     public void addFront(T data) {
         Node<T> node = new Node<>(data);
-        if(head == null) {
+        if (head == null) {
             head = node;
             tail = node;
-        }
-        else {
+        } else {
             node.setNext(head);
             head.setPrev(node);
             head = node;
@@ -55,10 +57,9 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
 
     public void addEnd(T data) {
         Node<T> node = new Node<>(data);
-        if(head == null) {
+        if (head == null) {
             head = node;
-        }
-        else {
+        } else {
             tail.setNext(node);
             node.setPrev(tail);
         }
@@ -69,16 +70,14 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
         Node<T> current = head;
         while (current != null) { //while there is a node to work with
             if (current.getData().equals(data)) {
-                if(current.getPrev() == null) {
+                if (current.getPrev() == null) {
                     head = current.getNext();
-                }
-                else {
+                } else {
                     current.getPrev().setNext(current.getNext());
                 }
-                if(current.getNext() == null) {
+                if (current.getNext() == null) {
                     tail = current.getPrev();
-                }
-                else {
+                } else {
                     current.getNext().setPrev(current.getPrev());
                 }
                 return;
@@ -94,7 +93,7 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
     }
 
     public void bubbleSort() {
-        if(head == null || head.getNext() == null) {
+        if (head == null || head.getNext() == null) {
             return; //can't be sorted
         }
         boolean hasSwapped;
@@ -105,7 +104,7 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
             hasSwapped = false;
             current = head;
             while (current.getNext() != tail) {
-                if(current.getData().compareTo(current.getNext().getData()) > 0) {
+                if (current.getData().compareTo(current.getNext().getData()) > 0) {
                     swapNodes(current, current.getNext());
                     hasSwapped = true;
                 }
@@ -124,19 +123,17 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
     }
 
     private void moveNodeToPosition(Node<T> node, Node<T> position) {
-        if(node == position) {
+        if (node == position) {
             return;
         }
-        if(node == head) {
+        if (node == head) {
             head = head.getNext();
-        }
-        else {
+        } else {
             node.getPrev().setNext(node.getNext());
         }
-        if(node == tail) {
+        if (node == tail) {
             tail = tail.getPrev();
-        }
-        else {
+        } else {
             node.getNext().setPrev(node.getPrev());
         }
         if (position == null) {
@@ -144,21 +141,20 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
             node.setPrev(tail);
             node.setNext(null);
             tail = node;
-        }
-        else {
+        } else {
             node.setPrev(position.getPrev());
             node.setNext(position);
             if (position.getPrev() != null) {
                 position.getPrev().setNext(node);
-            }
-            else {
+            } else {
                 head = node;
             }
             position.setPrev(node);
         }
     }
+
     public void insertionSort() {
-        if (head == null || head.getNext() == null){
+        if (head == null || head.getNext() == null) {
             return;
         }
         Node<T> newTail = head;
@@ -166,15 +162,21 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
 
         while (current != null) {
             Node<T> insertionPosition = getInsertionPosition(current);
-            if(insertionPosition != current) {
+            if (insertionPosition != current) {
                 Node<T> temp = current;
                 current = current.getNext();
                 moveNodeToPosition(temp, insertionPosition);
-            }
-            else {
+            } else {
                 current = current.getNext();
                 newTail = newTail.getNext();
             }
         }
     }
+
+    public static <T extends Comparable<T>> String rBinarySearch(DoublyLinkedListVgSales list, int initial, int end, T target) {
+        T middle = 
+
+        return null;
+    }
+
 }

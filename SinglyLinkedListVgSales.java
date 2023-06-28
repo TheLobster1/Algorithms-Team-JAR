@@ -140,45 +140,44 @@ class VgSalesLinkedList {
     }
 
 
-//    public static <T> String rLinearSearch(Node<T> start, T target) {   //Recursive linear search
-//        if (start == null) {
-//            return null;
-//        }
-//        if (target == start.data)
-//            return start.toString();
-//        return rLinearSearch(start.next, target);
-//    }
+    private static <T> String rLinearSearch(Node<T> start, T target) {   //Recursive linear search
+        if (start == null) {
+            return null;
+        }
+        if (target == start.data)
+            return start.toString();
+        return rLinearSearch(start.next, target);
+    }
 
-//    public static <T> Node findMiddleNodeBinary(Node<T> start, Node<T> last) {
-//        if (start.data == null)
-//            return null;
-//        Node<T> slowSearch = start;         //Searches 1 node ahead
-//        Node<T> fastSearch = start.next;    //Searches 2 nodes ahead
-//
-//        while (fastSearch != last) {
-//            fastSearch = fastSearch.next;
-//            if (fastSearch != last) {
-//                slowSearch = slowSearch.next;
-//                fastSearch = fastSearch.next;
-//            }
-//        }
-//        return slowSearch;
-//    }
+    protected static <T> Node findMiddleNodeBinary(Node<T> start, Node<T> last) {
+        if (start.data == null)
+            return null;
+        Node<T> slowSearch = start;         //Searches 1 node ahead
+        Node<T> fastSearch = start.next;    //Searches 2 nodes ahead
 
-//    //TODO: Logic to figure out which method to use the int one or string
-//    public static <T extends Integer> Integer rBinarySearch(Node<T> start, T target) {
-//        Node<T> last = null;
-//        do {
-//            Node<T> middle = findMiddleNodeBinary(start, last);
-//
-//            if (start.data == target) {
-//                return start.data;
-//            } else if (target.toString() < start.data.toString()) {
-//
-//            }
-//        } while () {
-//
-//        }
-//        return null;
-//    }
+        while (fastSearch != last) {
+            fastSearch = fastSearch.next;
+            if (fastSearch != last) {
+                slowSearch = slowSearch.next;
+                fastSearch = fastSearch.next;
+            }
+        }
+        return slowSearch;
+    }
+
+    public static <T extends Comparable<T>> String rBinarySearch(Node<T> start, T target, int left, int right) {
+        Node<T> middleNode = findMiddleNodeBinary(start, null);
+
+        int middle = left + (right - left) / 2;
+
+        if (middleNode.data.compareTo(target) == 0) {
+            return middleNode.toString();   //Returns the entire node as string
+        } else if (middleNode.data.compareTo(target) > 0) {
+            return rBinarySearch(start, target, left, middle - 1);
+        } else {
+            return rBinarySearch(start, target, middle + 1, right);
+        }
+
+    }
 }
+

@@ -110,4 +110,29 @@ public class ArrayListVgSales {
         }
     }
 
+
+    public static <T> String rLinearSearch(int size, CustomArrayListVgSales<T> list, T target) {
+        if (list.size() == 0) {
+            return null;
+        }
+        if (list.get(size - 1) == target) {
+            return list.get(size - 1).toString();
+        }
+        return rLinearSearch(size - 1, list, target);
+    }
+
+    public static <T extends Comparable> String rBinarySearch(CustomArrayListVgSales<T> list, int initial, int end, T target) {
+        if (initial > end) {
+            return null;
+        }
+        int middle = (initial + end) / 2;
+        T centre = list.get(middle);
+        if (centre.compareTo(target) == 0) {
+            return centre.toString();
+        } else if (centre.compareTo(target) > 0) {
+            return rBinarySearch(list, initial, middle - 1, target);
+        }
+        return null;
+    }
+
 }
