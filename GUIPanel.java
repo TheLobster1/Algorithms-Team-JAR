@@ -5,22 +5,195 @@ import java.awt.*;
 
 public class GUIPanel extends JPanel {
     private JButton runButton;
-    private JComboBox sortingSelector;
+    private JToggleButton singlyLinkedListToggle;
+    private JToggleButton arrayListToggle;
+    private JToggleButton doublyLinkedListToggle;
+    private JToggleButton bubbleSortToggle;
+    private JToggleButton insertionSortToggle;
+    private JToggleButton binarySearchToggle;
+    private JToggleButton linearSearchToggle;
     private JTextArea resultsBox;
     private JTextArea resultTimeBox;
+    private ArrayListVgSales arrayList;
     public GUIPanel() {
         this.setupUI();
+        this.arrayList = new ArrayListVgSales();
     }
     private void setupUI() {
         this.setLayout(new BorderLayout(0, 10));
+//        this.setBackground(Color.decode("#121212"));
+
         JLabel titleLabel = new JLabel();
         titleLabel.setFont(this.getFont());
+//        titleLabel.setForeground(Color.white);
         titleLabel.setHorizontalAlignment(0);
         titleLabel.setText("Algorithms Sorting and Searching");
         titleLabel.setVerticalAlignment(1);
         titleLabel.setVerticalTextPosition(1);
         titleLabel.setBorder(new CompoundBorder(titleLabel.getBorder(), new EmptyBorder(10, 10, 10, 10)));
         this.add(titleLabel, "North");
+
+        JPanel selectionPanel = new JPanel();
+        selectionPanel.setLayout(new GridLayout(1, 3));
+        this.add(selectionPanel);
+
+        JPanel listTypeSelector = new JPanel();
+        listTypeSelector.setLayout(new GridLayout(3, 1));
+        selectionPanel.add(listTypeSelector);
+
+        JPanel algoSelector = new JPanel();
+        algoSelector.setLayout(new GridLayout(5, 1));
+        selectionPanel.add(algoSelector);
+
+        resultsBox = new JTextArea(3, 1);
+        resultsBox.setLocation(100, 100);
+        resultsBox.setSize(50, 50);
+        resultsBox.setText("HELLO THERE");
+        resultsBox.setEnabled(true);
+//        resultsBox.setBackground(Color.decode("#121010"));
+//        resultsBox.setForeground(Color.white);
+        selectionPanel.add(resultsBox);
+
         //create buttons and add listeners
+        singlyLinkedListToggle = new JToggleButton();
+        singlyLinkedListToggle.setText("Singly Linked List");
+        singlyLinkedListToggle.addActionListener(e -> {
+            if(singlyLinkedListToggle.isSelected()) {
+                resetLists();
+                singlyLinkedListToggle.setSelected(true);
+            }
+        });
+        listTypeSelector.add(singlyLinkedListToggle);
+
+        arrayListToggle = new JToggleButton();
+        arrayListToggle.setText("ArrayList");
+        arrayListToggle.addActionListener(e -> {
+            if(arrayListToggle.isSelected()) {
+                resetLists();
+                arrayListToggle.setSelected(true);
+            }
+        });
+        listTypeSelector.add(arrayListToggle);
+
+        doublyLinkedListToggle = new JToggleButton();
+        doublyLinkedListToggle.setText("Doubly Linked List");
+        doublyLinkedListToggle.addActionListener(e -> {
+            if(doublyLinkedListToggle.isSelected()) {
+                resetLists();
+                doublyLinkedListToggle.setSelected(true);
+            }
+        });
+        listTypeSelector.add(doublyLinkedListToggle);
+
+        bubbleSortToggle = new JToggleButton();
+        bubbleSortToggle.setText("Bubble Sort");
+        bubbleSortToggle.addActionListener(e -> {
+            if(bubbleSortToggle.isSelected()) {
+                resetAlgorithms();
+                bubbleSortToggle.setSelected(true);
+            }
+        });
+        algoSelector.add(bubbleSortToggle);
+
+        insertionSortToggle = new JToggleButton();
+        insertionSortToggle.setText("Insertion Sort");
+        insertionSortToggle.addActionListener(e -> {
+            if(insertionSortToggle.isSelected()) {
+                resetAlgorithms();
+                insertionSortToggle.setSelected(true);
+            }
+        });
+        algoSelector.add(insertionSortToggle);
+
+        binarySearchToggle = new JToggleButton();
+        binarySearchToggle.setText("Binary Search");
+        binarySearchToggle.addActionListener(e -> {
+            if(binarySearchToggle.isSelected()) {
+                resetAlgorithms();
+                binarySearchToggle.setSelected(true);
+            }
+        });
+        algoSelector.add(binarySearchToggle);
+
+        linearSearchToggle = new JToggleButton();
+        linearSearchToggle.setText("Linear Search");
+        linearSearchToggle.addActionListener(e -> {
+            if(linearSearchToggle.isSelected()) {
+                resetAlgorithms();
+                linearSearchToggle.setSelected(true);
+            }
+        });
+        algoSelector.add(linearSearchToggle);
+
+        runButton = new JButton("Run");
+        runButton.addActionListener((e -> {
+            if(singlyLinkedListToggle.isSelected() || arrayListToggle.isSelected() || doublyLinkedListToggle.isSelected()) {
+                if(bubbleSortToggle.isSelected() || insertionSortToggle.isSelected() || binarySearchToggle.isSelected() || linearSearchToggle.isSelected()) {
+                    if(singlyLinkedListToggle.isSelected()) {
+                        if(bubbleSortToggle.isSelected()) {
+                            //todo
+                        }
+                        if(insertionSortToggle.isSelected()) {
+                            //todo
+                        }
+                        if(binarySearchToggle.isSelected()) {
+                            //todo
+                        }
+                        if(linearSearchToggle.isSelected()) {
+                            //todo
+                        }
+                    }
+                    if(arrayListToggle.isSelected()) {
+                        if(bubbleSortToggle.isSelected()) {
+                            //todo
+                        }
+                        if(insertionSortToggle.isSelected()) {
+                            //todo
+                        }
+                        if(binarySearchToggle.isSelected()) {
+                            //todo
+                        }
+                        if(linearSearchToggle.isSelected()) {
+                            //todo
+                        }
+                    }
+                    if(doublyLinkedListToggle.isSelected()) {
+                        if (bubbleSortToggle.isSelected()) {
+                            //todo
+                        }
+                        if (insertionSortToggle.isSelected()) {
+                            //todo
+                        }
+                        if (binarySearchToggle.isSelected()) {
+                            //todo
+                        }
+                        if (linearSearchToggle.isSelected()) {
+                            //todo
+                        }
+                    }
+                }
+
+            }
+
+        }));
+        algoSelector.add(runButton);
+
+    }
+    public Font getFont() { return new Font("Arial", 1, 24);}
+    public Dimension getPreferredSize() { return new Dimension(800, 600); }
+    private void resetLists() {
+        singlyLinkedListToggle.setSelected(false);
+        arrayListToggle.setSelected(false);
+        doublyLinkedListToggle.setSelected(false);
+    }
+    private void resetAlgorithms() {
+        bubbleSortToggle.setSelected(false);
+        insertionSortToggle.setSelected(false);
+        binarySearchToggle.setSelected(false);
+        linearSearchToggle.setSelected(false);
+    }
+
+    public void setText(String results) {
+        resultsBox.setText(results);
     }
 }
