@@ -13,11 +13,12 @@ public class GUIPanel extends JPanel {
     private JToggleButton binarySearchToggle;
     private JToggleButton linearSearchToggle;
     private JTextArea resultsBox;
+    private DoublyLinkedListVgSales<VgSales> doubly;
+    private VgSalesLinkedList singly;
     private JTextArea resultTimeBox;
-    private ArrayListVgSales arrayList;
     public GUIPanel() {
+
         this.setupUI();
-        this.arrayList = new ArrayListVgSales();
     }
     private void setupUI() {
         this.setLayout(new BorderLayout(0, 10));
@@ -159,7 +160,8 @@ public class GUIPanel extends JPanel {
                     }
                     if(doublyLinkedListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
-                            //todo
+
+                            doubly.bubbleSort();
                         }
                         if (insertionSortToggle.isSelected()) {
                             //todo
@@ -196,4 +198,6 @@ public class GUIPanel extends JPanel {
     public void setText(String results) {
         resultsBox.setText(results);
     }
+
+
 }
