@@ -2,7 +2,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Comparator;
 
-class VgSalesLinkedList {
+class VgSalesLinkedList<T extends Comparable<T>>{
+
+    private Node<T> head;
+    private Node<T> tail;
+
     static class Node<T> {
         T data;
         Node<T> next;
@@ -10,6 +14,77 @@ class VgSalesLinkedList {
         public Node(T data) {
             this.data = data;
             this.next = null;
+        }
+
+        public T getData() {
+            return data;
+        }
+
+        public void setData(T data) {
+            this.data = data;
+        }
+
+        public Node<T> getNext() {
+            return next;
+        }
+
+        public void setNext(Node<T> next) {
+            this.next = next;
+        }
+    }
+
+    public VgSalesLinkedList(){
+        this.head = null;
+        this.tail = null;
+    }
+
+    public void add(T data) {
+        Node<T> newNode = new Node<>(data);
+
+        if (head == null) {
+            // The list is empty, so both head and tail will point to the new node
+            head = newNode;
+            tail = newNode;
+        } else {
+            // New node will be added at the end, so update the next reference of the current tail
+            tail.setNext(newNode);
+            tail = newNode; // Update the tail to the new node
+        }
+    }
+
+    public void remove(T data) {
+        if (head == null) {
+            return;
+        }
+
+        if (head.getData().equals(data)) {
+            // If the element to remove is the head, update the head
+            head = head.getNext();
+
+            if (head == null) {
+                // If the list becomes empty, update the tail as well
+                tail = null;
+            }
+            return;
+        }
+
+        Node<T> prev = head;
+        Node<T> current = head.getNext();
+
+        while (current != null) {
+            if (current.getData().equals(data)) {
+                // Found the element to remove, update the next reference of the previous node
+                prev.setNext(current.getNext());
+
+                if (current == tail) {
+                    // If the element to remove is the tail, update the tail reference
+                    tail = prev;
+                }
+                return;
+            }
+
+            prev = current;
+            current = current.getNext();
         }
     }
 
