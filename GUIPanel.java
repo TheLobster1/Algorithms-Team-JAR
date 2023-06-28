@@ -13,17 +13,19 @@ public class GUIPanel extends JPanel {
     private JToggleButton binarySearchToggle;
     private JToggleButton linearSearchToggle;
     private JTextArea resultsBox;
+    private DoublyLinkedListVgSales<VgSales> doubly;
+    private VgSalesLinkedList singly;
     private JTextArea resultTimeBox;
     public GUIPanel() {
+
         this.setupUI();
     }
     private void setupUI() {
         this.setLayout(new BorderLayout(0, 10));
-        this.setBackground(Color.decode("#121212"));
-
+//        this.setBackground(Color.decode("#121212"));
         JLabel titleLabel = new JLabel();
         titleLabel.setFont(this.getFont());
-        titleLabel.setForeground(Color.white);
+//        titleLabel.setForeground(Color.white);
         titleLabel.setHorizontalAlignment(0);
         titleLabel.setText("Algorithms Sorting and Searching");
         titleLabel.setVerticalAlignment(1);
@@ -48,8 +50,8 @@ public class GUIPanel extends JPanel {
         resultsBox.setSize(50, 50);
         resultsBox.setText("HELLO THERE");
         resultsBox.setEnabled(true);
-        resultsBox.setBackground(Color.decode("#121010"));
-        resultsBox.setForeground(Color.white);
+//        resultsBox.setBackground(Color.decode("#121010"));
+//        resultsBox.setForeground(Color.white);
         selectionPanel.add(resultsBox);
 
         //create buttons and add listeners
@@ -128,33 +130,52 @@ public class GUIPanel extends JPanel {
             if(singlyLinkedListToggle.isSelected() || arrayListToggle.isSelected() || doublyLinkedListToggle.isSelected()) {
                 if(bubbleSortToggle.isSelected() || insertionSortToggle.isSelected() || binarySearchToggle.isSelected() || linearSearchToggle.isSelected()) {
                     if(singlyLinkedListToggle.isSelected()) {
-                        //TODO
+                        if(bubbleSortToggle.isSelected()) {
+                            //todo
+                        }
+                        if(insertionSortToggle.isSelected()) {
+                            //todo
+                        }
+                        if(binarySearchToggle.isSelected()) {
+                            //todo
+                        }
+                        if(linearSearchToggle.isSelected()) {
+                            //todo
+                        }
                     }
                     if(arrayListToggle.isSelected()) {
-                        //TODO
+                        if(bubbleSortToggle.isSelected()) {
+                            //todo
+                        }
+                        if(insertionSortToggle.isSelected()) {
+                            //todo
+                        }
+                        if(binarySearchToggle.isSelected()) {
+                            //todo
+                        }
+                        if(linearSearchToggle.isSelected()) {
+                            //todo
+                        }
                     }
                     if(doublyLinkedListToggle.isSelected()) {
-                        //TODO
+                        if (bubbleSortToggle.isSelected()) {
+                            doubly.bubbleSort();
+                        }
+                        if (insertionSortToggle.isSelected()) {
+                            //todo
+                        }
+                        if (binarySearchToggle.isSelected()) {
+                            //todo
+                        }
+                        if (linearSearchToggle.isSelected()) {
+                            //todo
+                        }
                     }
-                    if(bubbleSortToggle.isSelected()) {
-                        //TODO
-                    }
-                    if(insertionSortToggle.isSelected()) {
-                        //TODO
-                    }
-                    if(binarySearchToggle.isSelected()) {
-                        //TODO
-                    }
-                    if(linearSearchToggle.isSelected()) {
-                        //TODO
-                    }
-                    return;
                 }
             }
 
         }));
         algoSelector.add(runButton);
-
     }
     public Font getFont() { return new Font("Arial", 1, 24);}
     public Dimension getPreferredSize() { return new Dimension(800, 600); }
@@ -173,4 +194,6 @@ public class GUIPanel extends JPanel {
     public void setText(String results) {
         resultsBox.setText(results);
     }
+
+
 }
