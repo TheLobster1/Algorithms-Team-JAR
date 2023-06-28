@@ -23,7 +23,6 @@ public class GUIPanel extends JPanel {
     private void setupUI() {
         this.setLayout(new BorderLayout(0, 10));
 //        this.setBackground(Color.decode("#121212"));
-
         JLabel titleLabel = new JLabel();
         titleLabel.setFont(this.getFont());
 //        titleLabel.setForeground(Color.white);
@@ -160,7 +159,6 @@ public class GUIPanel extends JPanel {
                     }
                     if(doublyLinkedListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
-
                             doubly.bubbleSort();
                         }
                         if (insertionSortToggle.isSelected()) {
@@ -174,12 +172,10 @@ public class GUIPanel extends JPanel {
                         }
                     }
                 }
-
             }
 
         }));
         algoSelector.add(runButton);
-
     }
     public Font getFont() { return new Font("Arial", 1, 24);}
     public Dimension getPreferredSize() { return new Dimension(800, 600); }

@@ -12,4 +12,7 @@ public class AlgorithmsGUI {
         frame.setLocationByPlatform(true);
         frame.setVisible(true);
     }
+    public void setResults(String results) {
+        panel.setText(results);
+    }
 }
