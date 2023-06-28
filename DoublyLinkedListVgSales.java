@@ -87,7 +87,7 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
         }
     }
 
-    public void swapNodes(Node<T> node1, Node<T> node2) {
+    private void swapNodes(Node<T> node1, Node<T> node2) {
         T tempData = node1.getData();
         node1.setData(node2.getData());
         node2.setData(tempData);
@@ -115,7 +115,66 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
         } while (hasSwapped);
     }
 
-    public void insertionSort() {
+    private Node<T> getInsertionPosition(Node<T> node) {
+        Node<T> insertionPosition = head;
+        while (insertionPosition != null && node.getData().compareTo(insertionPosition.getData()) >= 0) {
+            insertionPosition = insertionPosition.getNext();
+        }
+        return insertionPosition != null ? insertionPosition.getPrev() : tail;
+    }
 
+    private void moveNodeToPosition(Node<T> node, Node<T> position) {
+        if(node == position) {
+            return;
+        }
+        if(node == head) {
+            head = head.getNext();
+        }
+        else {
+            node.getPrev().setNext(node.getNext());
+        }
+        if(node == tail) {
+            tail = tail.getPrev();
+        }
+        else {
+            node.getNext().setPrev(node.getPrev());
+        }
+        if (position == null) {
+            tail.setNext(node);
+            node.setPrev(tail);
+            node.setNext(null);
+            tail = node;
+        }
+        else {
+            node.setPrev(position.getPrev());
+            node.setNext(position);
+            if (position.getPrev() != null) {
+                position.getPrev().setNext(node);
+            }
+            else {
+                head = node;
+            }
+            position.setPrev(node);
+        }
+    }
+    public void insertionSort() {
+        if (head == null || head.getNext() == null){
+            return;
+        }
+        Node<T> newTail = head;
+        Node<T> current = head.getNext();
+
+        while (current != null) {
+            Node<T> insertionPosition = getInsertionPosition(current);
+            if(insertionPosition != current) {
+                Node<T> temp = current;
+                current = current.getNext();
+                moveNodeToPosition(temp, insertionPosition);
+            }
+            else {
+                current = current.getNext();
+                newTail = newTail.getNext();
+            }
+        }
     }
 }
