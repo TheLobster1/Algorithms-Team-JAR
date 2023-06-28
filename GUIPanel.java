@@ -20,6 +20,7 @@ public class GUIPanel extends JPanel {
     private CustomArrayListVgSales array;
     private StopWatch stopWatch;
     private JTextArea resultTimeBox;
+
     public GUIPanel() {
         doubly = new DoublyLinkedListVgSales<>();
         singly = new VgSalesLinkedList();
@@ -41,6 +42,7 @@ public class GUIPanel extends JPanel {
                 VgSales vgSales = new VgSales(rank, name, year);
                 doubly.addEnd(vgSales);
 //                array.add(vgSales);
+                singly.add(vgSales);
             }
 
         } catch (Exception e) {
@@ -48,6 +50,7 @@ public class GUIPanel extends JPanel {
         }
         this.setupUI();
     }
+
     private void setupUI() {
         this.setLayout(new BorderLayout(0, 10));
 //        this.setBackground(Color.decode("#121212"));
@@ -86,7 +89,7 @@ public class GUIPanel extends JPanel {
         singlyLinkedListToggle = new JToggleButton();
         singlyLinkedListToggle.setText("Singly Linked List");
         singlyLinkedListToggle.addActionListener(e -> {
-            if(singlyLinkedListToggle.isSelected()) {
+            if (singlyLinkedListToggle.isSelected()) {
                 resetLists();
                 singlyLinkedListToggle.setSelected(true);
             }
@@ -96,7 +99,7 @@ public class GUIPanel extends JPanel {
         arrayListToggle = new JToggleButton();
         arrayListToggle.setText("ArrayList");
         arrayListToggle.addActionListener(e -> {
-            if(arrayListToggle.isSelected()) {
+            if (arrayListToggle.isSelected()) {
                 resetLists();
                 arrayListToggle.setSelected(true);
             }
@@ -106,7 +109,7 @@ public class GUIPanel extends JPanel {
         doublyLinkedListToggle = new JToggleButton();
         doublyLinkedListToggle.setText("Doubly Linked List");
         doublyLinkedListToggle.addActionListener(e -> {
-            if(doublyLinkedListToggle.isSelected()) {
+            if (doublyLinkedListToggle.isSelected()) {
                 resetLists();
                 doublyLinkedListToggle.setSelected(true);
             }
@@ -116,7 +119,7 @@ public class GUIPanel extends JPanel {
         bubbleSortToggle = new JToggleButton();
         bubbleSortToggle.setText("Bubble Sort");
         bubbleSortToggle.addActionListener(e -> {
-            if(bubbleSortToggle.isSelected()) {
+            if (bubbleSortToggle.isSelected()) {
                 resetAlgorithms();
                 bubbleSortToggle.setSelected(true);
             }
@@ -126,7 +129,7 @@ public class GUIPanel extends JPanel {
         insertionSortToggle = new JToggleButton();
         insertionSortToggle.setText("Insertion Sort");
         insertionSortToggle.addActionListener(e -> {
-            if(insertionSortToggle.isSelected()) {
+            if (insertionSortToggle.isSelected()) {
                 resetAlgorithms();
                 insertionSortToggle.setSelected(true);
             }
@@ -136,7 +139,7 @@ public class GUIPanel extends JPanel {
         binarySearchToggle = new JToggleButton();
         binarySearchToggle.setText("Binary Search");
         binarySearchToggle.addActionListener(e -> {
-            if(binarySearchToggle.isSelected()) {
+            if (binarySearchToggle.isSelected()) {
                 resetAlgorithms();
                 binarySearchToggle.setSelected(true);
             }
@@ -146,7 +149,7 @@ public class GUIPanel extends JPanel {
         linearSearchToggle = new JToggleButton();
         linearSearchToggle.setText("Linear Search");
         linearSearchToggle.addActionListener(e -> {
-            if(linearSearchToggle.isSelected()) {
+            if (linearSearchToggle.isSelected()) {
                 resetAlgorithms();
                 linearSearchToggle.setSelected(true);
             }
@@ -155,44 +158,47 @@ public class GUIPanel extends JPanel {
 
         runButton = new JButton("Run");
         runButton.addActionListener((e -> {
-            if(singlyLinkedListToggle.isSelected() || arrayListToggle.isSelected() || doublyLinkedListToggle.isSelected()) {
-                if(bubbleSortToggle.isSelected() || insertionSortToggle.isSelected() || binarySearchToggle.isSelected() || linearSearchToggle.isSelected()) {
-                    if(singlyLinkedListToggle.isSelected()) {
-                        if(bubbleSortToggle.isSelected()) {
+            if (singlyLinkedListToggle.isSelected() || arrayListToggle.isSelected() || doublyLinkedListToggle.isSelected()) {
+                if (bubbleSortToggle.isSelected() || insertionSortToggle.isSelected() || binarySearchToggle.isSelected() || linearSearchToggle.isSelected()) {
+                    if (singlyLinkedListToggle.isSelected()) {
+                        if (bubbleSortToggle.isSelected()) {
+                            //todo
+//                            singly.bubbleSort();
+//                            stopWatch.stop();
+                        }
+                        if (insertionSortToggle.isSelected()) {
                             //todo
                         }
-                        if(insertionSortToggle.isSelected()) {
+                        if (binarySearchToggle.isSelected()) {
                             //todo
                         }
-                        if(binarySearchToggle.isSelected()) {
-                            //todo
-                        }
-                        if(linearSearchToggle.isSelected()) {
-                            //todo
-                        }
-                    }
-                    if(arrayListToggle.isSelected()) {
-                        if(bubbleSortToggle.isSelected()) {
-                            //todo
-                        }
-                        if(insertionSortToggle.isSelected()) {
-                            //todo
-                        }
-                        if(binarySearchToggle.isSelected()) {
-                            //todo
-                        }
-                        if(linearSearchToggle.isSelected()) {
+                        if (linearSearchToggle.isSelected()) {
                             //todo
                         }
                     }
-                    if(doublyLinkedListToggle.isSelected()) {
+                    if (arrayListToggle.isSelected()) {
+                        if (bubbleSortToggle.isSelected()) {
+                            //todo
+
+                        }
+                        if (insertionSortToggle.isSelected()) {
+                            //todo
+                        }
+                        if (binarySearchToggle.isSelected()) {
+                            //todo
+                        }
+                        if (linearSearchToggle.isSelected()) {
+                            //todo
+                        }
+                    }
+                    if (doublyLinkedListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
                             doubly.bubbleSort();
                             stopWatch.stop();
                             String results = "";
-                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis()/1000) + " Seconds /n";
+                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis() / 1000) + " Seconds /n";
                             DoublyLinkedListVgSales.Node<VgSales> current = doubly.getHead();
-                            while(current != null) {
+                            while (current != null) {
                                 results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "/n";
                                 current = current.getNext();
                             }
@@ -213,13 +219,21 @@ public class GUIPanel extends JPanel {
         }));
         algoSelector.add(runButton);
     }
-    public Font getFont() { return new Font("Arial", 1, 24);}
-    public Dimension getPreferredSize() { return new Dimension(800, 600); }
+
+    public Font getFont() {
+        return new Font("Arial", 1, 24);
+    }
+
+    public Dimension getPreferredSize() {
+        return new Dimension(800, 600);
+    }
+
     private void resetLists() {
         singlyLinkedListToggle.setSelected(false);
         arrayListToggle.setSelected(false);
         doublyLinkedListToggle.setSelected(false);
     }
+
     private void resetAlgorithms() {
         bubbleSortToggle.setSelected(false);
         insertionSortToggle.setSelected(false);

@@ -227,7 +227,7 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
 
     public <T extends Comparable<T>> String rBinarySearch(Node<T> start, T target, int left, int right) {
 
-        /*Sorry for my lord, I have forsaken you. My methods are cruel and savage however this (getTail()) would not function
+        /*Sorry my lord, I have forsaken you. My methods are cruel and savage however this (getTail()) would not function
          * without my interference into the matter. I have tried searching the 7 realms for why this had to happen... I am yet to find that out.
          * My guess is that the tail has had an identity crisis midway and couldn't figure itself out.*/
 
