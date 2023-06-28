@@ -187,18 +187,31 @@ public class GUIPanel extends JPanel {
                     }
                     if(doublyLinkedListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
+                            stopWatch.start();
                             doubly.bubbleSort();
                             stopWatch.stop();
                             String results = "";
-                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis()/1000) + " Seconds /n";
+                            results += "Time passed: " + stopWatch.getElapsedTimeMillis() + " milliseconds \n";
                             DoublyLinkedListVgSales.Node<VgSales> current = doubly.getHead();
                             while(current != null) {
-                                results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "/n";
+                                results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
                                 current = current.getNext();
                             }
+                            resultsBox.setText(results);
+
                         }
                         if (insertionSortToggle.isSelected()) {
+                            stopWatch.start();
                             doubly.insertionSort();
+                            stopWatch.stop();
+                            String results = "";
+                            results += "Time passed: " + stopWatch.getElapsedTimeMillis() + " milliseconds \n";
+                            DoublyLinkedListVgSales.Node<VgSales> current = doubly.getHead();
+                            while(current != null) {
+                                results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
+                                current = current.getNext();
+                            }
+                            resultsBox.setText(results);
                         }
                         if (binarySearchToggle.isSelected()) {
                             //todo
