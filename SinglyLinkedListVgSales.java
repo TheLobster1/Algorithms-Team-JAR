@@ -17,13 +17,15 @@ class VgSalesLinkedList {
         String csvFile = "vgsales.csv"; // path to your dataset
         String line;
         Node<VgSales> head = null; // Head of the linked list
-
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            // Skip the header(Rank, Name, Year) line
+            br.readLine();
+            // Process the remaining lines
             while ((line = br.readLine()) != null) {
-                String[] columns = line.split(","); // Split the lines into columns with ,
-                String rank = columns[0];
+                String[] columns = line.split(","); // Split the lines into columns with ','
+                int rank = Integer.parseInt(columns[0]);
                 String name = columns[1];
-                String year = columns[3];
+                String year = columns[3]; // Reasoning for this is because the dataset has N/A as some years
                 VgSales vgSales = new VgSales(rank, name, year);
                 head = insert(head, vgSales);
             }
@@ -60,13 +62,13 @@ class VgSalesLinkedList {
         printList(head);
     }
 
-    public static <T> Node<T> insert(Node<T> head, T data) {
+    protected static <T> Node<T> insert(Node<T> head, T data) {
         Node<T> newNode = new Node<>(data);
         newNode.next = head;
         return newNode;
     }
 
-    public static <T> void bubbleSort(Node<T> head, Comparator<T> comparator) {
+    protected static <T> void bubbleSort(Node<T> head, Comparator<T> comparator) {
         if (head == null || head.next == null)
             return;
 
@@ -89,7 +91,7 @@ class VgSalesLinkedList {
         } while (swapped);
     }
 
-    public static <T> Node<T> insertionSort(Node<T> head, Comparator<T> comparator) {
+    protected static <T> Node<T> insertionSort(Node<T> head, Comparator<T> comparator) {
         if (head == null || head.next == null)
             return head;
 
@@ -105,7 +107,7 @@ class VgSalesLinkedList {
         return sorted;
     }
 
-    public static <T> Node<T> sortedInsert(Node<T> head, Node<T> newNode, Comparator<T> comparator) {
+    protected static <T> Node<T> sortedInsert(Node<T> head, Node<T> newNode, Comparator<T> comparator) {
         if (head == null || comparator.compare(newNode.data, head.data) < 0) {
             newNode.next = head;
             return newNode;
@@ -123,13 +125,13 @@ class VgSalesLinkedList {
         return head;
     }
 
-    public static <T> void swapNodes(Node<T> node1, Node<T> node2) {
+    protected static <T> void swapNodes(Node<T> node1, Node<T> node2) {
         T temp = node1.data;
         node1.data = node2.data;
         node2.data = temp;
     }
 
-    public static void printList(Node<VgSales> head) {
+    protected static void printList(Node<VgSales> head) {
         if (head == null)
             return;
 
@@ -138,45 +140,45 @@ class VgSalesLinkedList {
     }
 
 
-    public static <T> String rLinearSearch(Node<T> start, T target) {   //Recursive linear search
-        if (start == null) {
-            return null;
-        }
-        if (target == start.data)
-            return start.toString();
-        return rLinearSearch(start.next, target);
-    }
+//    public static <T> String rLinearSearch(Node<T> start, T target) {   //Recursive linear search
+//        if (start == null) {
+//            return null;
+//        }
+//        if (target == start.data)
+//            return start.toString();
+//        return rLinearSearch(start.next, target);
+//    }
 
-    public static <T> Node findMiddleNodeBinary(Node<T> start, Node<T> last) {
-        if (start.data == null)
-            return null;
-        Node<T> slowSearch = start;         //Searches 1 node ahead
-        Node<T> fastSearch = start.next;    //Searches 2 nodes ahead
+//    public static <T> Node findMiddleNodeBinary(Node<T> start, Node<T> last) {
+//        if (start.data == null)
+//            return null;
+//        Node<T> slowSearch = start;         //Searches 1 node ahead
+//        Node<T> fastSearch = start.next;    //Searches 2 nodes ahead
+//
+//        while (fastSearch != last) {
+//            fastSearch = fastSearch.next;
+//            if (fastSearch != last) {
+//                slowSearch = slowSearch.next;
+//                fastSearch = fastSearch.next;
+//            }
+//        }
+//        return slowSearch;
+//    }
 
-        while (fastSearch != last) {
-            fastSearch = fastSearch.next;
-            if (fastSearch != last) {
-                slowSearch = slowSearch.next;
-                fastSearch = fastSearch.next;
-            }
-        }
-        return slowSearch;
-    }
-
-    //TODO: Logic to figure out which method to use the int one or string
-    public static <T extends Integer> Integer rBinarySearch(Node<T> start, T target) {
-        Node<T> last = null;
-        do {
-            Node<T> middle = findMiddleNodeBinary(start, last);
-
-            if (start.data == target) {
-                return start.data;
-            } else if (target.toString() < start.data.toString()) {
-
-            }
-        } while () {
-
-        }
-        return cock;
-    }
+//    //TODO: Logic to figure out which method to use the int one or string
+//    public static <T extends Integer> Integer rBinarySearch(Node<T> start, T target) {
+//        Node<T> last = null;
+//        do {
+//            Node<T> middle = findMiddleNodeBinary(start, last);
+//
+//            if (start.data == target) {
+//                return start.data;
+//            } else if (target.toString() < start.data.toString()) {
+//
+//            }
+//        } while () {
+//
+//        }
+//        return null;
+//    }
 }

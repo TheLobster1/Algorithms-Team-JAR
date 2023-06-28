@@ -1,35 +1,35 @@
 public class VgSales implements Comparable<VgSales>{
-    private String rank;
+    private int rank;
     private String name;
     private String year;
 
-    public VgSales(String rank, String name, String year) {
+    public VgSales(int rank, String name, String year) {
         this.rank = rank;
         this.name = name;
         this.year = year;
     }
 
-    public String getRank() {
+    protected int getRank() {
         return rank;
     }
 
-    public void setRank(String rank) {
+    protected void setRank(int rank) {
         this.rank = rank;
     }
 
-    public String getName() {
+    protected String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    protected void setName(String name) {
         this.name = name;
     }
 
-    public String getYear() {
+    protected String getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    protected void setYear(String year) {
         this.year = year;
     }
 
