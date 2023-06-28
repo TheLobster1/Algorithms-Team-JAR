@@ -137,6 +137,14 @@ class VgSalesLinkedList<T extends Comparable<T>>{
         printList(head);
     }
 
+    public Node<T> getHead() {
+        return head;
+    }
+
+    public Node<T> getTail() {
+        return tail;
+    }
+
     protected static <T> Node<T> insert(Node<T> head, T data) {
         Node<T> newNode = new Node<>(data);
         newNode.next = head;
@@ -146,7 +154,6 @@ class VgSalesLinkedList<T extends Comparable<T>>{
     protected static <T> void bubbleSort(Node<T> head, Comparator<T> comparator) {
         if (head == null || head.next == null)
             return;
-
         boolean swapped;
         Node<T> current;
         Node<T> last = null;

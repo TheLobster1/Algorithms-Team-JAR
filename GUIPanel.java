@@ -4,6 +4,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.Comparator;
 
 public class GUIPanel extends JPanel {
     private JButton runButton;
@@ -163,8 +164,17 @@ public class GUIPanel extends JPanel {
                     if (singlyLinkedListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
                             //todo
-//                            singly.bubbleSort();
-//                            stopWatch.stop();
+                            stopWatch.start();
+                            singly.bubbleSort(singly.getHead(), Comparator.comparing(VgSales::getRank));
+                            stopWatch.stop();
+                            String results = "";
+                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis() / 1000) + " Seconds \n";
+                            VgSalesLinkedList.Node<VgSales> current = singly.getHead();
+                            while(current != null) {
+                                results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
+                                current = current.getNext();
+                            }
+                            setText(results);
                         }
                         if (insertionSortToggle.isSelected()) {
                             //todo
@@ -193,15 +203,17 @@ public class GUIPanel extends JPanel {
                     }
                     if (doublyLinkedListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
+                            stopWatch.start();
                             doubly.bubbleSort();
                             stopWatch.stop();
                             String results = "";
-                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis() / 1000) + " Seconds /n";
+                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis() / 1000) + " Seconds \n";
                             DoublyLinkedListVgSales.Node<VgSales> current = doubly.getHead();
                             while (current != null) {
-                                results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "/n";
+                                results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
                                 current = current.getNext();
                             }
+                            setText(results);
                         }
                         if (insertionSortToggle.isSelected()) {
                             doubly.insertionSort();
