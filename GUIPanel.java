@@ -203,7 +203,7 @@ public class GUIPanel extends JPanel {
                     if (doublyLinkedListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
                             stopWatch.start();
-                            doubly.bubbleSort();
+                            doubly.bubbleSort(Comparator.comparing(VgSales::getRank));
                             stopWatch.stop();
                             String results = "";
                             results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";

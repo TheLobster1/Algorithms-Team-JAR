@@ -100,42 +100,42 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
 
 
 
-    public static void main(String[] args) {
-        String csvFile = "vgsales.csv"; // path to your dataset
-        String line;
-        VgSalesLinkedList.Node<VgSales> head = null; // Head of the linked list
-        DoublyLinkedListVgSales<VgSales> list = new DoublyLinkedListVgSales();
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-            // Skip the header(Rank, Name, Year) line
-            br.readLine();
-            // Process the remaining lines
-            while ((line = br.readLine()) != null) {
-                String[] columns = line.split(","); // Split the lines into columns with ','
-                int rank = Integer.parseInt(columns[0]);
-                String name = columns[1];
-                String year = columns[3]; // Reasoning for this is because the dataset has N/A as some years
-                VgSales vgSales = new VgSales(rank, name, year);
-                list.addEnd(vgSales);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        System.out.println("Original List:\n");
-        Node<VgSales> current = list.getHead();
-        while (current != null) {
-            System.out.println(current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "/n");
-            current = current.getNext();
-        }
-
-        System.out.println("\n\nBubble Sort by Rank:\n");
-        list.bubbleSort();
-        while (current != null) {
-            System.out.println(current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "/n");
-            current = current.getNext();
-        }
-    }
+//    public static void main(String[] args) {
+//        String csvFile = "vgsales.csv"; // path to your dataset
+//        String line;
+//        VgSalesLinkedList.Node<VgSales> head = null; // Head of the linked list
+//        DoublyLinkedListVgSales<VgSales> list = new DoublyLinkedListVgSales();
+//        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+//            // Skip the header(Rank, Name, Year) line
+//            br.readLine();
+//            // Process the remaining lines
+//            while ((line = br.readLine()) != null) {
+//                String[] columns = line.split(","); // Split the lines into columns with ','
+//                int rank = Integer.parseInt(columns[0]);
+//                String name = columns[1];
+//                String year = columns[3]; // Reasoning for this is because the dataset has N/A as some years
+//                VgSales vgSales = new VgSales(rank, name, year);
+//                list.addEnd(vgSales);
+//            }
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        System.out.println("Original List:\n");
+//        Node<VgSales> current = list.getHead();
+//        while (current != null) {
+//            System.out.println(current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "/n");
+//            current = current.getNext();
+//        }
+//
+//        System.out.println("\n\nBubble Sort by Rank:\n");
+//        list.bubbleSort();
+//        while (current != null) {
+//            System.out.println(current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "/n");
+//            current = current.getNext();
+//        }
+//    }
 
 
 
@@ -145,23 +145,39 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
         node2.setData(tempData);
     }
 
-    public void bubbleSort() {
+    public void bubbleSort(Comparator<T> comparator) {
         if (head == null || head.getNext() == null) {
             return; //can't be sorted
         }
+
         boolean hasSwapped;
         Node<T> current;
         Node<T> tail = null;
+
         do {
             hasSwapped = false;
             current = head;
+            Node<T> previous = null;
+
             while (current.getNext() != tail) {
-                if (current.getData().compareTo(current.getNext().getData()) > 0) {
-                    swapNodes(current, current.getNext());
+                Node<T> nextNode = current.getNext();
+                if (comparator.compare(current.data, current.next.data) > 0) {
+                    if (previous == null) {
+                        head = nextNode;
+                    } else {
+                        previous.setNext(nextNode);
+                    }
+                    current.setNext(nextNode.getNext());
+                    nextNode.setNext(current);
+                    previous = nextNode;
+
                     hasSwapped = true;
+                } else {
+                    previous = current;
+                    current = nextNode;
                 }
-                current = current.getNext();
             }
+
             tail = current;
         } while (hasSwapped);
     }
