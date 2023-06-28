@@ -6,11 +6,11 @@ public class LinkedList implements iPoliceCollection {
         this.head = null;
         this.size = 0;
     }
+
     public void addNode(Node node) {
-        if(head == null) {
+        if (head == null) {
             head = node;
-        }
-        else {
+        } else {
             Node current = head;
             while (current.getNext() != null) {
                 current = current.getNext();
@@ -21,19 +21,18 @@ public class LinkedList implements iPoliceCollection {
     }
 
     public void removeNode(Node node) {
-        if(head != null) {
+        if (head != null) {
             Node currentNode = head;
             Node previousNode = null;
-            if(head == node && head.getNext() != null) {
+            if (head == node && head.getNext() != null) {
                 head = head.getNext();
-            }
-            else if(head.getNext() == null) {
+            } else if (head.getNext() == null) {
                 head = null;
             }
             while (currentNode.getNext() != null) {
                 previousNode = currentNode;
                 currentNode = currentNode.getNext();
-                if(currentNode == node) {
+                if (currentNode == node) {
                     previousNode.setNext(currentNode.getNext());
                     return;
                 }
@@ -49,8 +48,9 @@ public class LinkedList implements iPoliceCollection {
     }
 
     @Override
-    public Comparable findIndex(int index) {
-        //TODO
+    public Comparable fetchAtIndex(int index) {
+        //TODO make search to find node at index position in list
+
         return null;
     }
 

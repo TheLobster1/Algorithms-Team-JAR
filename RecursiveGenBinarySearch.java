@@ -24,9 +24,9 @@ public class RecursiveGenBinarySearch<T extends Comparable<? super T>> {
         this.middleOfBounds = Math.round((this.lowerB / 2) + (this.upperB / 2));  //Index of centre
 
         if (this.lowerB < this.upperB) {
-            int comp = collection.findIndex(this.middleOfBounds).compareTo(this.target);
+            int comp = collection.fetchAtIndex(this.middleOfBounds).compareTo(this.target);
             //If middle is the target
-            if (collection.findIndex(this.middleOfBounds) == this.target) {
+            if (collection.fetchAtIndex(this.middleOfBounds) == this.target) {
                 return this.middleOfBounds;
             } else if (comp > 0) {  //If the target is higher than the middle
                 return binarySearch(collection, target, this.middleOfBounds + 1, this.upperB);
