@@ -2,6 +2,8 @@ import javax.swing.*;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 public class GUIPanel extends JPanel {
     private JButton runButton;
@@ -15,9 +17,35 @@ public class GUIPanel extends JPanel {
     private JTextArea resultsBox;
     private DoublyLinkedListVgSales<VgSales> doubly;
     private VgSalesLinkedList singly;
+    private CustomArrayListVgSales array;
+    private StopWatch stopWatch;
     private JTextArea resultTimeBox;
     public GUIPanel() {
+        doubly = new DoublyLinkedListVgSales<>();
+        singly = new VgSalesLinkedList();
+        array = new CustomArrayListVgSales();
+        stopWatch = new StopWatch();
 
+        String csvFile = "vgsales.csv"; // path to your dataset
+        String line;
+        VgSalesLinkedList.Node<VgSales> head = null; // Head of the linked list
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            // Skip the header(Rank, Name, Year) line
+            br.readLine();
+            // Process the remaining lines
+            while ((line = br.readLine()) != null) {
+                String[] columns = line.split(","); // Split the lines into columns with ','
+                int rank = Integer.parseInt(columns[0]);
+                String name = columns[1];
+                String year = columns[3]; // Reasoning for this is because the dataset has N/A as some years
+                VgSales vgSales = new VgSales(rank, name, year);
+                doubly.addEnd(vgSales);
+//                array.add(vgSales);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         this.setupUI();
     }
     private void setupUI() {
@@ -160,9 +188,17 @@ public class GUIPanel extends JPanel {
                     if(doublyLinkedListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
                             doubly.bubbleSort();
+                            stopWatch.stop();
+                            String results = "";
+                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis()/1000) + " Seconds /n";
+                            DoublyLinkedListVgSales.Node<VgSales> current = doubly.getHead();
+                            while(current != null) {
+                                results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "/n";
+                                current = current.getNext();
+                            }
                         }
                         if (insertionSortToggle.isSelected()) {
-                            //todo
+                            doubly.insertionSort();
                         }
                         if (binarySearchToggle.isSelected()) {
                             //todo
@@ -194,6 +230,4 @@ public class GUIPanel extends JPanel {
     public void setText(String results) {
         resultsBox.setText(results);
     }
-
-
 }

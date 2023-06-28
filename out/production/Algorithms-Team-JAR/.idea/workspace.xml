@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60242326-2a0c-439b-b474-3492167db2de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Squirrel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StopWatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoublyLinkedListVgSales.java" beforeDir="false" afterPath="$PROJECT_DIR$/DoublyLinkedListVgSales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUIPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUIPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +38,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/GitHub/wind-turbine-exam-TheLobster1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/GitHub/Algorithms-Team-JAR&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -74,10 +74,37 @@
       <workItem from="1680620902631" duration="4295000" />
       <workItem from="1680802016130" duration="7198000" />
       <workItem from="1680809431758" duration="30000" />
+      <workItem from="1680865707902" duration="732000" />
+      <workItem from="1680891961573" duration="609000" />
+      <workItem from="1680896145784" duration="20000" />
+      <workItem from="1681150677840" duration="85000" />
+      <workItem from="1681218246479" duration="26000" />
+      <workItem from="1681219460164" duration="594000" />
+      <workItem from="1684828842625" duration="5000" />
+      <workItem from="1684829058708" duration="32000" />
+      <workItem from="1684829105573" duration="2043000" />
+      <workItem from="1685100244402" duration="9000" />
+      <workItem from="1685992276235" duration="74000" />
+      <workItem from="1685992467937" duration="6000" />
+      <workItem from="1687174477381" duration="1427000" />
+      <workItem from="1687894861850" duration="1736000" />
+      <workItem from="1687955064857" duration="14507000" />
+      <workItem from="1687972492965" duration="6472000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

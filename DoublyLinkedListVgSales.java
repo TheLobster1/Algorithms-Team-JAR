@@ -1,6 +1,15 @@
 public class DoublyLinkedListVgSales<T extends Comparable<T>> {
     private Node<T> head;
     private Node<T> tail;
+
+    public Node<T> getHead() {
+        return head;
+    }
+
+    public Node<T> getTail() {
+        return tail;
+    }
+
     static class Node<T> {
         public T data;
         private Node<T> prev;
