@@ -163,12 +163,11 @@ public class GUIPanel extends JPanel {
                 if (bubbleSortToggle.isSelected() || insertionSortToggle.isSelected() || binarySearchToggle.isSelected() || linearSearchToggle.isSelected()) {
                     if (singlyLinkedListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
-                            //todo
                             stopWatch.start();
                             singly.bubbleSort(singly.getHead(), Comparator.comparing(VgSales::getRank));
                             stopWatch.stop();
                             String results = "";
-                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis() / 1000) + " Seconds \n";
+                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
                             VgSalesLinkedList.Node<VgSales> current = singly.getHead();
                             while(current != null) {
                                 results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
@@ -207,7 +206,7 @@ public class GUIPanel extends JPanel {
                             doubly.bubbleSort();
                             stopWatch.stop();
                             String results = "";
-                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis() / 1000) + " Seconds \n";
+                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
                             DoublyLinkedListVgSales.Node<VgSales> current = doubly.getHead();
                             while (current != null) {
                                 results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
