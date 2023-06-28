@@ -182,63 +182,47 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
         } while (hasSwapped);
     }
 
-    private Node<T> getInsertionPosition(Node<T> node) {
-        Node<T> insertionPosition = head;
-        while (insertionPosition != null && node.getData().compareTo(insertionPosition.getData()) >= 0) {
-            insertionPosition = insertionPosition.getNext();
-        }
-        return insertionPosition != null ? insertionPosition.getPrev() : tail;
-    }
-
-    private void moveNodeToPosition(Node<T> node, Node<T> position) {
-        if (node == position) {
-            return;
-        }
-        if (node == head) {
-            head = head.getNext();
-        } else {
-            node.getPrev().setNext(node.getNext());
-        }
-        if (node == tail) {
-            tail = tail.getPrev();
-        } else {
-            node.getNext().setPrev(node.getPrev());
-        }
-        if (position == null) {
-            tail.setNext(node);
-            node.setPrev(tail);
-            node.setNext(null);
-            tail = node;
-        } else {
-            node.setPrev(position.getPrev());
-            node.setNext(position);
-            if (position.getPrev() != null) {
-                position.getPrev().setNext(node);
-            } else {
-                head = node;
-            }
-            position.setPrev(node);
-        }
-    }
-
-    public void insertionSort() {
-        if (head == null || head.getNext() == null) {
-            return;
-        }
-        Node<T> newTail = head;
-        Node<T> current = head.getNext();
+    public void insertionSort(Comparator<T> comparator) {
+        Node<T> mover = null;
+        Node<T> current = head;
 
         while (current != null) {
-            Node<T> insertionPosition = getInsertionPosition(current);
-            if (insertionPosition != current) {
-                Node<T> temp = current;
-                current = current.getNext();
-                moveNodeToPosition(temp, insertionPosition);
-            } else {
-                current = current.getNext();
-                newTail = newTail.getNext();
-            }
+            Node<T> next = current.next;
+            current.prev = current.next = null;
+            mover = sortedInsert(mover, current, comparator);
+            current = next;
         }
+
+        head = mover;
+    }
+
+    private Node<T> sortedInsert(Node<T> initial, Node<T> newNode, Comparator<T> comparator) {
+        Node<T> current;
+        if (initial == null) {
+            initial = newNode;
+
+        } else if (comparator.compare(initial.data, newNode.data) > 0) {
+            newNode.next = initial;
+            newNode.next.prev = newNode;
+            initial = newNode;
+
+        } else {
+            current = initial;
+
+            while (current.next != null && comparator.compare(current.next.data, newNode.data) < 0) {
+                current = current.next;
+            }
+
+            newNode.next = current.next;
+
+            if (current.next != null) {
+                newNode.next.prev = newNode;
+            }
+
+            current.next = newNode;
+            newNode.prev = current;
+        }
+        return initial;
     }
 
     public Node<T> linearSearch(T data) {

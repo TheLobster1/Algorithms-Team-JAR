@@ -164,7 +164,7 @@ public class GUIPanel extends JPanel {
                     if (singlyLinkedListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
                             stopWatch.start();
-                            singly.bubbleSort(singly.getHead(), Comparator.comparing(VgSales::getRank));
+                            singly.bubbleSort(singly.getHead(), Comparator.comparing(VgSales::getYear));
                             stopWatch.stop();
                             String results = "";
                             results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
@@ -176,7 +176,17 @@ public class GUIPanel extends JPanel {
                             setText(results);
                         }
                         if (insertionSortToggle.isSelected()) {
-                            //todo
+                            stopWatch.start();
+                            singly.bubbleSort(singly.getHead(), Comparator.comparing(VgSales::getYear));
+                            stopWatch.stop();
+                            String results = "";
+                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
+                            VgSalesLinkedList.Node<VgSales> current = singly.getHead();
+                            while(current != null) {
+                                results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
+                                current = current.getNext();
+                            }
+                            setText(results);
                         }
                         if (binarySearchToggle.isSelected()) {
                             //todo
@@ -203,7 +213,7 @@ public class GUIPanel extends JPanel {
                     if (doublyLinkedListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
                             stopWatch.start();
-                            doubly.bubbleSort(Comparator.comparing(VgSales::getRank));
+                            doubly.bubbleSort(Comparator.comparing(VgSales::getYear));
                             stopWatch.stop();
                             String results = "";
                             results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
@@ -215,10 +225,30 @@ public class GUIPanel extends JPanel {
                             setText(results);
                         }
                         if (insertionSortToggle.isSelected()) {
-                            doubly.insertionSort();
+                            stopWatch.start();
+                            doubly.insertionSort(Comparator.comparing(VgSales::getYear));
+                            stopWatch.stop();
+                            String results = "";
+                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
+                            DoublyLinkedListVgSales.Node<VgSales> current = doubly.getHead();
+                            while (current != null) {
+                                results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
+                                current = current.getNext();
+                            }
+                            setText(results);
                         }
                         if (binarySearchToggle.isSelected()) {
-                            //todo
+                            stopWatch.start();
+//                            DoublyLinkedListVgSales.Node<VgSales> current = doubly.rBinarySearch(doubly.getHead(), );
+                            stopWatch.stop();
+                            String results = "";
+                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
+                            DoublyLinkedListVgSales.Node<VgSales> current = doubly.getHead();
+                            while (current != null) {
+                                results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
+                                current = current.getNext();
+                            }
+                            setText(results);
                         }
                         if (linearSearchToggle.isSelected()) {
                             //todo

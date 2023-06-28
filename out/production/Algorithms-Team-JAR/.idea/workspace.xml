@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="60242326-2a0c-439b-b474-3492167db2de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/StopWatch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DoublyLinkedListVgSales.java" beforeDir="false" afterPath="$PROJECT_DIR$/DoublyLinkedListVgSales.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUIPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUIPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/DoublyLinkedListVgSales.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/DoublyLinkedListVgSales.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/GUIPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/GUIPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +47,23 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="DoublyLinkedListVgSales" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DoublyLinkedListVgSales" />
+      <module name="Algorithms-Team-JAR" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Algorithms-Team-JAR" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VgSalesLinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="VgSalesLinkedList" />
       <module name="Algorithms-Team-JAR" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -57,6 +72,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.VgSalesLinkedList" />
+        <item itemvalue="Application.DoublyLinkedListVgSales" />
       </list>
     </recent_temporary>
   </component>
@@ -89,7 +106,7 @@
       <workItem from="1687174477381" duration="1427000" />
       <workItem from="1687894861850" duration="1736000" />
       <workItem from="1687955064857" duration="14507000" />
-      <workItem from="1687972492965" duration="6472000" />
+      <workItem from="1687972492965" duration="23117000" />
     </task>
     <servers />
   </component>
