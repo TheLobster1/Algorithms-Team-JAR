@@ -1,4 +1,4 @@
-public class DoublyLinkedListVgSales<T> {
+public class DoublyLinkedListVgSales<T extends Comparable<T>> {
     private Node<T> head;
     private Node<T> tail;
     static class Node<T> {
@@ -85,5 +85,37 @@ public class DoublyLinkedListVgSales<T> {
             }
             current = current.getNext();
         }
+    }
+
+    public void swapNodes(Node<T> node1, Node<T> node2) {
+        T tempData = node1.getData();
+        node1.setData(node2.getData());
+        node2.setData(tempData);
+    }
+
+    public void bubbleSort() {
+        if(head == null || head.getNext() == null) {
+            return; //can't be sorted
+        }
+        boolean hasSwapped;
+        Node<T> current;
+        Node<T> tail = null;
+
+        do {
+            hasSwapped = false;
+            current = head;
+            while (current.getNext() != tail) {
+                if(current.getData().compareTo(current.getNext().getData()) > 0) {
+                    swapNodes(current, current.getNext());
+                    hasSwapped = true;
+                }
+                current = current.getNext();
+            }
+            tail = current;
+        } while (hasSwapped);
+    }
+
+    public void insertionSort() {
+
     }
 }
