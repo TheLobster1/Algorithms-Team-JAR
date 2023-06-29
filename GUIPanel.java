@@ -88,7 +88,9 @@ public class GUIPanel extends JPanel {
         resultsBox.setEnabled(true);
 //        resultsBox.setBackground(Color.decode("#121010"));
 //        resultsBox.setForeground(Color.white);
-        selectionPanel.add(resultsBox);
+//        selectionPanel.add(resultsBox);
+        JScrollPane scrollPane = new JScrollPane(resultsBox, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        selectionPanel.add(scrollPane);
 
         //create buttons and add listeners
         singlyLinkedListToggle = new JToggleButton();
@@ -279,19 +281,19 @@ public class GUIPanel extends JPanel {
                         }
                         if (binarySearchToggle.isSelected()) {
                             stopWatch.start();
-//                            DoublyLinkedListVgSales.Node<VgSales> current = doubly.rBinarySearch(doubly.getHead(), );
+//                            String result = doubly.rBinarySearch(doubly.getHead(), 2003, 0, counter);
                             stopWatch.stop();
                             String results = "";
                             results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
-                            DoublyLinkedListVgSales.Node<VgSales> current = doubly.getHead();
-                            while (current != null) {
-                                results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
-                                current = current.getNext();
-                            }
+//                            results += result;
+
                             setText(results);
                         }
                         if (linearSearchToggle.isSelected()) {
                             //todo
+                            stopWatch.start();
+//                            DoublyLinkedListVgSales.Node<VgSales> result = doubly.linearSearch()
+                            stopWatch.stop();
                         }
                     }
                 }
