@@ -141,7 +141,7 @@ class VgSalesLinkedList<T extends Comparable<T>> {
         return head;
     }
 
-    public Node<T> getTail() {
+    public VgSalesLinkedList.Node<T> getTail() {
         return tail;
     }
 
@@ -227,7 +227,7 @@ class VgSalesLinkedList<T extends Comparable<T>> {
             return null;
         }
         if (target == start.data)
-            return start.toString();
+            return start.data.toString();
         return rLinearSearch(start.next, target);
     }
 
@@ -248,7 +248,8 @@ class VgSalesLinkedList<T extends Comparable<T>> {
     }
 
     public <T extends Comparable<T>> String rBinarySearch(Node<T> start, T target, int left, int right, Comparator<T> comparator) {
-        Node<T> middleNode = findMiddleNodeBinary(start, null);
+        //Again apologies for this heinous act
+        Node<T> middleNode = findMiddleNodeBinary(start, (Node<T>) getTail());
 
         if (left > right) {
             return null;

@@ -1,5 +1,3 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.Comparator;
 
 public class DoublyLinkedListVgSales<T extends Comparable<T>> {
@@ -99,7 +97,6 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
     }
 
 
-
 //    public static void main(String[] args) {
 //        String csvFile = "vgsales.csv"; // path to your dataset
 //        String line;
@@ -136,7 +133,6 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
 //            current = current.getNext();
 //        }
 //    }
-
 
 
     private void swapNodes(Node<T> node1, Node<T> node2) {
@@ -248,7 +244,7 @@ public class DoublyLinkedListVgSales<T extends Comparable<T>> {
             return null;
         }
         if (target == start.data)
-            return start.toString();
+            return start.data.toString();
         return rLinearSearch(start.next, target);
     }
 

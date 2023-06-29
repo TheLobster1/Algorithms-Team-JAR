@@ -22,6 +22,7 @@ public class GUIPanel extends JPanel {
     private StopWatch stopWatch;
     private JTextArea resultTimeBox;
     private int counter;
+    private VgSales thingSold;
 
     public GUIPanel() {
         doubly = new DoublyLinkedListVgSales<>();
@@ -29,7 +30,7 @@ public class GUIPanel extends JPanel {
         array = new CustomArrayListVgSales();
         stopWatch = new StopWatch();
         counter = 0;
-
+        thingSold = new VgSales(8818, "Serious Sam", "2002");
 
         String csvFile = "vgsales.csv"; // path to your dataset
         String line;
@@ -53,6 +54,10 @@ public class GUIPanel extends JPanel {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        doubly.addEnd(thingSold);
+        singly.add(thingSold);
+        array.add(thingSold);
+        counter++;
         this.setupUI();
     }
 
@@ -198,7 +203,7 @@ public class GUIPanel extends JPanel {
                         }
                         if (binarySearchToggle.isSelected()) {
                             stopWatch.start();
-                            String result = singly.rBinarySearch(singly.getHead(), 2003, 0, counter, Comparator.comparing(VgSales::getYear));
+                            String result = singly.rBinarySearch(singly.getHead(), thingSold, 0, counter, Comparator.comparing(VgSales::getYear));
                             stopWatch.stop();
                             String results = "";
                             results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
@@ -210,7 +215,12 @@ public class GUIPanel extends JPanel {
                         if (linearSearchToggle.isSelected()) {
                             //todo
                             stopWatch.start();
-                            String result = singly.rLinearSearch(singly.getHead(), 2003);
+                            String result = singly.rLinearSearch(singly.getHead(), thingSold);
+                            stopWatch.stop();
+                            String results = "";
+                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
+                            results += result;
+                            setText(results);
 
                         }
                     }
@@ -247,9 +257,27 @@ public class GUIPanel extends JPanel {
                         }
                         if (binarySearchToggle.isSelected()) {
                             //todo
+                            stopWatch.start();
+                            String result = array.rBinarySearch(array, 0, counter, thingSold);
+                            stopWatch.stop();
+
+                            String results = "";
+                            results += "Time passed: " + stopWatch.getElapsedTimeMillis() + " Milliseconds\n";
+                            results += result;
+                            setText(results);
+
                         }
                         if (linearSearchToggle.isSelected()) {
                             //todo
+
+                            stopWatch.start();
+                            String result = array.rLinearSearch(counter, array, thingSold);
+                            stopWatch.stop();
+
+                            String results = "";
+                            results += "Time passed: " + stopWatch.getElapsedTimeMillis() + " Milliseconds\n";
+                            results += result;
+                            setText(results);
                         }
                     }
                     if (doublyLinkedListToggle.isSelected()) {

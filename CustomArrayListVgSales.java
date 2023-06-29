@@ -85,7 +85,7 @@ public class CustomArrayListVgSales<T> {
         }
     }
 
-    public static <T> String rLinearSearch(int size, CustomArrayListVgSales<T> list, T target) {
+    public <T> String rLinearSearch(int size, CustomArrayListVgSales<T> list, T target) {
         if (list.size() == 0) {
             return null;
         }
