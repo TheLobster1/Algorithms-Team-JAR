@@ -309,19 +309,23 @@ public class GUIPanel extends JPanel {
                         }
                         if (binarySearchToggle.isSelected()) {
                             stopWatch.start();
-//                            String result = doubly.rBinarySearch(doubly.getHead(), 2003, 0, counter);
+                            String result = doubly.rBinarySearch(doubly.getHead(), thingSold, 0, counter);
+                            stopWatch.stop();
+                            String results = "";
+                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
+                            results += result;
+                            setText(results);
+                        }
+                        if (linearSearchToggle.isSelected()) {
+                            //todo
+                            stopWatch.start();
+                            String result = doubly.rLinearSearch(doubly.getHead(), thingSold);
                             stopWatch.stop();
                             String results = "";
                             results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
 //                            results += result;
 
                             setText(results);
-                        }
-                        if (linearSearchToggle.isSelected()) {
-                            //todo
-                            stopWatch.start();
-//                            DoublyLinkedListVgSales.Node<VgSales> result = doubly.linearSearch()
-                            stopWatch.stop();
                         }
                     }
                 }
