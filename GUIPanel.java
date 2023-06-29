@@ -45,7 +45,7 @@ public class GUIPanel extends JPanel {
                 String year = columns[3]; // Reasoning for this is because the dataset has N/A as some years
                 VgSales vgSales = new VgSales(rank, name, year);
                 doubly.addEnd(vgSales);
-//                array.add(vgSales);
+                array.add(vgSales);
                 singly.add(vgSales);
                 counter++;
             }
@@ -168,7 +168,7 @@ public class GUIPanel extends JPanel {
                     if (singlyLinkedListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
                             stopWatch.start();
-                            singly.bubbleSort(singly.getHead(), Comparator.comparing(VgSales::getYear));
+                            singly.bubbleSort(singly.getHead(), Comparator.comparing(VgSales::getName));
                             stopWatch.stop();
                             String results = "";
                             results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
@@ -177,11 +177,12 @@ public class GUIPanel extends JPanel {
                                 results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
                                 current = current.getNext();
                             }
+                            System.out.println(results);
                             setText(results);
                         }
                         if (insertionSortToggle.isSelected()) {
                             stopWatch.start();
-                            singly.bubbleSort(singly.getHead(), Comparator.comparing(VgSales::getYear));
+                            singly.insertionSort(singly.getHead(), Comparator.comparing(VgSales::getYear));
                             stopWatch.stop();
                             String results = "";
                             results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
@@ -190,6 +191,7 @@ public class GUIPanel extends JPanel {
                                 results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
                                 current = current.getNext();
                             }
+                            System.out.println(results);
                             setText(results);
                         }
                         if (binarySearchToggle.isSelected()) {
@@ -212,11 +214,34 @@ public class GUIPanel extends JPanel {
                     }
                     if (arrayListToggle.isSelected()) {
                         if (bubbleSortToggle.isSelected()) {
-                            //todo
+                            stopWatch.start();
+                            array.bubbleSort(array, Comparator.comparing(VgSales::getName));
+                            stopWatch.stop();
 
+                            String results = "";
+                            results += "Time passed: " + stopWatch.getElapsedTimeMillis() + " Milliseconds\n";
+                            for (int i = 0; i < array.getSize(); i++) {
+                                // Type casting here needs to be changed
+                                VgSales vgsale = (VgSales) array.get(i);
+                                results += vgsale.getRank() + " | " + vgsale.getName() + " | " + vgsale.getYear() + "\n";
+                            }
+                            System.out.println(results);
+                            setText(results);
                         }
                         if (insertionSortToggle.isSelected()) {
-                            //todo
+                            stopWatch.start();
+                            array.insertionSort(array, Comparator.comparing(VgSales::getYear));
+                            stopWatch.stop();
+
+                            String results = "";
+                            results += "Time passed: " + stopWatch.getElapsedTimeMillis() + " Milliseconds\n";
+                            for (int i = 0; i < array.getSize(); i++) {
+                                // Type casting here needs to be changed
+                                VgSales vgsale = (VgSales) array.get(i);
+                                results += vgsale.getRank() + " | " + vgsale.getName() + " | " + vgsale.getYear() + "\n";
+                            }
+                            System.out.println(results);
+                            setText(results);
                         }
                         if (binarySearchToggle.isSelected()) {
                             //todo
