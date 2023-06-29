@@ -323,7 +323,7 @@ public class GUIPanel extends JPanel {
                             stopWatch.stop();
                             String results = "";
                             results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
-//                            results += result;
+                            results += result;
 
                             setText(results);
                         }
