@@ -250,16 +250,18 @@ class VgSalesLinkedList<T extends Comparable<T>> {
     public <T extends Comparable<T>> String rBinarySearch(Node<T> start, T target, int left, int right, Comparator<T> comparator) {
         Node<T> middleNode = findMiddleNodeBinary(start, null);
 
+        if (left > right) {
+            return null;
+        }
         int middle = left + (right - left) / 2;
 
-//        comparator.compare(middleNode.data, target) = 0)
-//        if (middleNode.data.compareTo(target) == 0) {
-//            return middleNode.toString();   //Returns the entire node as string
-//        } else if (middleNode.data.compareTo(target) > 0) {
-//            return rBinarySearch(start, target, left, middle - 1);
-//        } else {
-//            return rBinarySearch(start, target, middle + 1, right);
-//        }
+        if (comparator.compare(middleNode.data, target) == 0) {
+            return middleNode.toString();
+        } else if (comparator.compare(middleNode.data, target) > 0) {
+            return rBinarySearch(start, target, left, middle - 1, comparator);
+        } else {
+            return rBinarySearch(start, target, middle + 1, right, comparator);
+        }
 
     }
 }
