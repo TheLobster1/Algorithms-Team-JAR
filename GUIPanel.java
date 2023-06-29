@@ -21,12 +21,15 @@ public class GUIPanel extends JPanel {
     private CustomArrayListVgSales array;
     private StopWatch stopWatch;
     private JTextArea resultTimeBox;
+    private int counter;
 
     public GUIPanel() {
         doubly = new DoublyLinkedListVgSales<>();
         singly = new VgSalesLinkedList();
         array = new CustomArrayListVgSales();
         stopWatch = new StopWatch();
+        counter = 0;
+
 
         String csvFile = "vgsales.csv"; // path to your dataset
         String line;
@@ -44,6 +47,7 @@ public class GUIPanel extends JPanel {
                 doubly.addEnd(vgSales);
 //                array.add(vgSales);
                 singly.add(vgSales);
+                counter++;
             }
 
         } catch (Exception e) {
@@ -169,7 +173,7 @@ public class GUIPanel extends JPanel {
                             String results = "";
                             results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
                             VgSalesLinkedList.Node<VgSales> current = singly.getHead();
-                            while(current != null) {
+                            while (current != null) {
                                 results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
                                 current = current.getNext();
                             }
@@ -182,17 +186,28 @@ public class GUIPanel extends JPanel {
                             String results = "";
                             results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
                             VgSalesLinkedList.Node<VgSales> current = singly.getHead();
-                            while(current != null) {
+                            while (current != null) {
                                 results += current.getData().getRank() + " | " + current.getData().getName() + " | " + current.getData().getYear() + "\n";
                                 current = current.getNext();
                             }
                             setText(results);
                         }
                         if (binarySearchToggle.isSelected()) {
-                            //todo
+                            stopWatch.start();
+                            String result = singly.rBinarySearch(singly.getHead(), 2003, 0, counter, Comparator.comparing(VgSales::getYear));
+                            stopWatch.stop();
+                            String results = "";
+                            results += "Time passed: " + (stopWatch.getElapsedTimeMillis()) + " Milliseconds \n";
+                            results += result;
+                            setText(results);
+
+
                         }
                         if (linearSearchToggle.isSelected()) {
                             //todo
+                            stopWatch.start();
+                            String result = singly.rLinearSearch(singly.getHead(), 2003);
+
                         }
                     }
                     if (arrayListToggle.isSelected()) {

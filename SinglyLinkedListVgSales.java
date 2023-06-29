@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Comparator;
 
-class VgSalesLinkedList<T extends Comparable<T>>{
+class VgSalesLinkedList<T extends Comparable<T>> {
 
     private Node<T> head;
     private Node<T> tail;
@@ -33,7 +33,7 @@ class VgSalesLinkedList<T extends Comparable<T>>{
         }
     }
 
-    public VgSalesLinkedList(){
+    public VgSalesLinkedList() {
         this.head = null;
         this.tail = null;
     }
@@ -222,7 +222,7 @@ class VgSalesLinkedList<T extends Comparable<T>>{
     }
 
 
-    private static <T> String rLinearSearch(Node<T> start, T target) {   //Recursive linear search
+    public <T> String rLinearSearch(Node<T> start, T target) {   //Recursive linear search
         if (start == null) {
             return null;
         }
@@ -231,7 +231,7 @@ class VgSalesLinkedList<T extends Comparable<T>>{
         return rLinearSearch(start.next, target);
     }
 
-    protected static <T> Node findMiddleNodeBinary(Node<T> start, Node<T> last) {
+    protected <T> Node findMiddleNodeBinary(Node<T> start, Node<T> last) {
         if (start.data == null)
             return null;
         Node<T> slowSearch = start;         //Searches 1 node ahead
@@ -247,18 +247,19 @@ class VgSalesLinkedList<T extends Comparable<T>>{
         return slowSearch;
     }
 
-    public static <T extends Comparable<T>> String rBinarySearch(Node<T> start, T target, int left, int right) {
+    public <T extends Comparable<T>> String rBinarySearch(Node<T> start, T target, int left, int right, Comparator<T> comparator) {
         Node<T> middleNode = findMiddleNodeBinary(start, null);
 
         int middle = left + (right - left) / 2;
 
-        if (middleNode.data.compareTo(target) == 0) {
-            return middleNode.toString();   //Returns the entire node as string
-        } else if (middleNode.data.compareTo(target) > 0) {
-            return rBinarySearch(start, target, left, middle - 1);
-        } else {
-            return rBinarySearch(start, target, middle + 1, right);
-        }
+//        comparator.compare(middleNode.data, target) = 0)
+//        if (middleNode.data.compareTo(target) == 0) {
+//            return middleNode.toString();   //Returns the entire node as string
+//        } else if (middleNode.data.compareTo(target) > 0) {
+//            return rBinarySearch(start, target, left, middle - 1);
+//        } else {
+//            return rBinarySearch(start, target, middle + 1, right);
+//        }
 
     }
 }

@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="60242326-2a0c-439b-b474-3492167db2de" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/DoublyLinkedListVgSales.java" beforeDir="false" afterPath="$PROJECT_DIR$/DoublyLinkedListVgSales.java" afterDir="false" />
+    <list default="true" id="76e03545-6bdf-4c9b-bed4-a2844769689f" name="Changes" comment="Adjustments">
       <change beforePath="$PROJECT_DIR$/GUIPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUIPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/DoublyLinkedListVgSales.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/DoublyLinkedListVgSales.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/GUIPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms-Team-JAR/GUIPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SinglyLinkedListVgSales.java" beforeDir="false" afterPath="$PROJECT_DIR$/SinglyLinkedListVgSales.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,13 +17,24 @@
       </list>
     </option>
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Jardrei_branch" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2NSKnKA8jcF7kMZokM7SGeACKlq" />
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProjectId" id="2O37Vai6vYyxmudkaJJyPXVua8o" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,17 +45,15 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/GitHub/Algorithms-Team-JAR&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/khoud/Desktop/Java projects/PP&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
   }
 }</component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="DoublyLinkedListVgSales" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DoublyLinkedListVgSales" />
+    <configuration name="ArrayListSquirrel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ArrayListSquirrel" />
       <module name="Algorithms-Team-JAR" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -62,52 +66,85 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VgSalesLinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="VgSalesLinkedList" />
-      <module name="Algorithms-Team-JAR" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.VgSalesLinkedList" />
-        <item itemvalue="Application.DoublyLinkedListVgSales" />
+        <item itemvalue="Application.ArrayListSquirrel" />
+        <item itemvalue="Application.ArrayListSquirrel" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="60242326-2a0c-439b-b474-3492167db2de" name="Changes" comment="" />
-      <created>1679652210863</created>
+      <changelist id="76e03545-6bdf-4c9b-bed4-a2844769689f" name="Changes" comment="" />
+      <created>1680777436007</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1679652210863</updated>
-      <workItem from="1679652212579" duration="616000" />
-      <workItem from="1680008030528" duration="492000" />
-      <workItem from="1680613326517" duration="1969000" />
-      <workItem from="1680620902631" duration="4295000" />
-      <workItem from="1680802016130" duration="7198000" />
-      <workItem from="1680809431758" duration="30000" />
-      <workItem from="1680865707902" duration="732000" />
-      <workItem from="1680891961573" duration="609000" />
-      <workItem from="1680896145784" duration="20000" />
-      <workItem from="1681150677840" duration="85000" />
-      <workItem from="1681218246479" duration="26000" />
-      <workItem from="1681219460164" duration="594000" />
-      <workItem from="1684828842625" duration="5000" />
-      <workItem from="1684829058708" duration="32000" />
-      <workItem from="1684829105573" duration="2043000" />
-      <workItem from="1685100244402" duration="9000" />
-      <workItem from="1685992276235" duration="74000" />
-      <workItem from="1685992467937" duration="6000" />
-      <workItem from="1687174477381" duration="1427000" />
-      <workItem from="1687894861850" duration="1736000" />
-      <workItem from="1687955064857" duration="14507000" />
-      <workItem from="1687972492965" duration="23117000" />
+      <updated>1680777436007</updated>
+      <workItem from="1680777437928" duration="22764000" />
+      <workItem from="1680874531994" duration="4483000" />
+      <workItem from="1681217836126" duration="239000" />
+      <workItem from="1687186729601" duration="607000" />
+      <workItem from="1687353044299" duration="448000" />
+      <workItem from="1687353597609" duration="5152000" />
+      <workItem from="1687440538968" duration="358000" />
+      <workItem from="1687791005927" duration="1438000" />
+      <workItem from="1687794109723" duration="1206000" />
+      <workItem from="1687869976867" duration="2277000" />
+      <workItem from="1687957060301" duration="28508000" />
     </task>
+    <task id="LOCAL-00001" summary="Sinlge linked list - Linear search + Most of the binary search">
+      <created>1687971578234</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687971578234</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Single linked list - Linear search + Most of the binary search">
+      <created>1687971625784</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687971625784</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Finished arrayList searches. Making binary search for middle and making the binary search for Double linked list.">
+      <created>1687978700820</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687978700820</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Finished arrayList searches. Making binary search for middle and making the binary search for Double linked list.">
+      <created>1687978974364</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687978974364</updated>
+    </task>
+    <task id="LOCAL-00005" summary="removed unneccessary stuff">
+      <created>1687980276687</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687980276687</updated>
+    </task>
+    <task id="LOCAL-00006" summary="An apology and hopefully working double linked list search (Binary).">
+      <created>1687981982897</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687981982897</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Adjustments">
+      <created>1687985639860</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687985639860</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,5 +160,18 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Sinlge linked list - Linear search + Most of the binary search" />
+    <MESSAGE value="Single linked list - Linear search + Most of the binary search" />
+    <MESSAGE value="Finished arrayList searches. Making binary search for middle and making the binary search for Double linked list." />
+    <MESSAGE value="removed unneccessary stuff" />
+    <MESSAGE value="An apology and hopefully working double linked list search (Binary)." />
+    <MESSAGE value="Adjustments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjustments" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
